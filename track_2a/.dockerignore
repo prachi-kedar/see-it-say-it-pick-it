@@ -1,0 +1,5 @@
+outputs/
+docs/dev_runs/
+venv/
+.git/
+**/__pycache__/

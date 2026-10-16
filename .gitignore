@@ -1,4 +1,3 @@
-results*.json
-*.raw.jsonl
+venv/
 __pycache__/
 .DS_Store

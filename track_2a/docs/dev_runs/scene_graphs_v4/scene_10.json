@@ -1,0 +1,218 @@
+{
+  "scene": "scene_10",
+  "image_size": [
+    2448,
+    2048
+  ],
+  "objects": [
+    {
+      "id": "black_part",
+      "noun": "part",
+      "colour": "black",
+      "pixel": [
+        1883,
+        1314
+      ],
+      "box": [
+        1800,
+        1214,
+        1967,
+        1415
+      ],
+      "score": 0.321,
+      "name_confidence": 0.467,
+      "inside": "plate",
+      "on_top_of": null
+    },
+    {
+      "id": "black_tray",
+      "noun": "tray",
+      "colour": "black",
+      "pixel": [
+        1766,
+        958
+      ],
+      "box": [
+        1085,
+        0,
+        2448,
+        1916
+      ],
+      "score": 0.0,
+      "name_confidence": 0.0,
+      "inside": null,
+      "on_top_of": null
+    },
+    {
+      "id": "green_mug",
+      "noun": "mug",
+      "colour": "green",
+      "pixel": [
+        811,
+        692
+      ],
+      "box": [
+        529,
+        535,
+        1019,
+        928
+      ],
+      "score": 0.674,
+      "name_confidence": 0.853,
+      "inside": "grey_tray",
+      "on_top_of": null
+    },
+    {
+      "id": "grey_tray",
+      "noun": "tray",
+      "colour": "grey",
+      "pixel": [
+        642,
+        957
+      ],
+      "box": [
+        0,
+        81,
+        1284,
+        1833
+      ],
+      "score": 0.694,
+      "name_confidence": 0.979,
+      "inside": null,
+      "on_top_of": null
+    },
+    {
+      "id": "mandarin",
+      "noun": "mandarin",
+      "colour": "orange",
+      "pixel": [
+        472,
+        1410
+      ],
+      "box": [
+        315,
+        1255,
+        623,
+        1562
+      ],
+      "score": 0.761,
+      "name_confidence": 0.998,
+      "inside": "grey_tray",
+      "on_top_of": null
+    },
+    {
+      "id": "plate",
+      "noun": "plate",
+      "colour": "grey",
+      "pixel": [
+        1870,
+        1301
+      ],
+      "box": [
+        1488,
+        919,
+        2253,
+        1684
+      ],
+      "score": 0.874,
+      "name_confidence": 1.0,
+      "inside": null,
+      "on_top_of": null
+    },
+    {
+      "id": "red_gear_1",
+      "noun": "gear",
+      "colour": "red",
+      "pixel": [
+        294,
+        1034
+      ],
+      "box": [
+        148,
+        851,
+        523,
+        1217
+      ],
+      "score": 0.474,
+      "name_confidence": 0.996,
+      "inside": "grey_tray",
+      "on_top_of": null
+    },
+    {
+      "id": "red_gear_2",
+      "noun": "gear",
+      "colour": "red",
+      "pixel": [
+        847,
+        1207
+      ],
+      "box": [
+        601,
+        981,
+        979,
+        1352
+      ],
+      "score": 0.451,
+      "name_confidence": 1.0,
+      "inside": "grey_tray",
+      "on_top_of": null
+    },
+    {
+      "id": "saucer_1",
+      "noun": "saucer",
+      "colour": "yellow",
+      "pixel": [
+        418,
+        563
+      ],
+      "box": [
+        165,
+        316,
+        671,
+        810
+      ],
+      "score": 0.748,
+      "name_confidence": 0.965,
+      "inside": null,
+      "on_top_of": null
+    },
+    {
+      "id": "saucer_2",
+      "noun": "saucer",
+      "colour": "orange",
+      "pixel": [
+        1118,
+        236
+      ],
+      "box": [
+        1001,
+        72,
+        1235,
+        401
+      ],
+      "score": 0.321,
+      "name_confidence": 0.262,
+      "inside": null,
+      "on_top_of": null
+    },
+    {
+      "id": "yellow_gear",
+      "noun": "gear",
+      "colour": "yellow",
+      "pixel": [
+        833,
+        1470
+      ],
+      "box": [
+        728,
+        1379,
+        938,
+        1576
+      ],
+      "score": 0.329,
+      "name_confidence": 0.629,
+      "inside": "grey_tray",
+      "on_top_of": null
+    }
+  ]
+}

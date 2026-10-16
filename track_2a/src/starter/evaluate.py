@@ -127,7 +127,7 @@ def describe(entry) -> str:
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("results", type=Path)
-    ap.add_argument("--data", type=Path, default=Path("dataset"))
+    ap.add_argument("--data", type=Path, default=Path("data/dataset"))
     ap.add_argument("--gt", type=Path, help="ground-truth folder (default: <data>/ground_truth)")
     ap.add_argument("--report", type=Path, help="per-instruction details as JSON, including plans for the jury")
     ap.add_argument("--robot-targets", type=Path, help="target pixels as robot base coordinates (CSV)")

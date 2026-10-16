@@ -1,0 +1,39 @@
+# Apertus is served by Ollama; the pipeline ("app") talks to it over the compose network.
+# Override the model with LLM_NAME and the endpoint with LLM_BASE_URL (no API key is needed locally).
+services:
+  ollama:
+    image: ollama/ollama:latest
+    volumes:
+      - ollama:/root/.ollama
+    # pull Apertus once (cached in the volume), then serve
+    entrypoint: ["/bin/sh", "-c"]
+    command:
+      - |
+        ollama serve & pid=$$!
+        until ollama list >/dev/null 2>&1; do sleep 1; done
+        ollama pull $${LLM_NAME:-hf.co/Colby/apertus-v1.5-8b-text-Q4_K_M-GGUF}
+        wait $$pid
+    environment:
+      LLM_NAME: ${LLM_NAME:-hf.co/Colby/apertus-v1.5-8b-text-Q4_K_M-GGUF}
+    healthcheck:
+      test: ["CMD-SHELL", "ollama list | grep -qF \"$${LLM_NAME}\""]
+      interval: 10s
+      timeout: 10s
+      retries: 120
+      start_period: 20s
+  app:
+    build: .
+    depends_on:
+      ollama:
+        condition: service_healthy
+    environment:
+      LLM_BASE_URL: ${LLM_BASE_URL:-http://ollama:11434}
+      LLM_NAME: ${LLM_NAME:-hf.co/Colby/apertus-v1.5-8b-text-Q4_K_M-GGUF}
+      HF_HOME: /hf-cache
+    volumes:
+      - ./data:/app/data
+      - ./outputs:/app/outputs
+      - hf-cache:/hf-cache
+volumes:
+  ollama:
+  hf-cache:

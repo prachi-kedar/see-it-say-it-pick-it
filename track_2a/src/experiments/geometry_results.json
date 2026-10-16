@@ -1,0 +1,2522 @@
+{
+  "plain": [
+    {
+      "instruction_id": "scene_01_i3",
+      "category": "relative",
+      "instruction": "pick up the object closest to the mug",
+      "votes": [
+        "red_cube"
+      ],
+      "answer": "red_cube",
+      "pixel_on": "red_cube",
+      "correct": [
+        "yellow_gear"
+      ],
+      "hit": false,
+      "analysis": "{\n      \"analysis\": \"The mug is at [620, 311, 1119, 720]. The objects inside the grey_tray are the black_tray, red_cube, and yellow_gear. The closest object to the mug among these is the red_cube, as its box [137, 856, 555, 1258] is closest to the mug's box [620, 311, 1119, 720] compared to the other objects in the grey_tray. The black_tray is further to the right, and the yellow_gear is further down. Therefore, the red_cube must be picked first to avoid placing another object on top of it.\",\n      \"target\": \"red_cube\"\n    }"
+    },
+    {
+      "instruction_id": "scene_01_i4",
+      "category": "multistep",
+      "instruction": "move everything from the grey tray to the black tray",
+      "votes": [
+        "green_mug"
+      ],
+      "answer": "green_mug",
+      "pixel_on": "mug",
+      "correct": [
+        "mug",
+        "yellow_gear",
+        "red_cube"
+      ],
+      "hit": true,
+      "analysis": "{\"analysis\": \"The grey_tray contains objects: green_mug, red_cube, yellow_gear. The black_tray is empty. To move everything from the grey tray to the black tray, the robot must pick each object in the grey tray one by one. The first object to be picked is green_mug, as it is the first object in the grey tray's box list.\", \"target\": \"green_mug\"}"
+    },
+    {
+      "instruction_id": "scene_02_i3",
+      "category": "relative",
+      "instruction": "pick up the object to the left of the mug",
+      "votes": [
+        "red_cube"
+      ],
+      "answer": "red_cube",
+      "pixel_on": "red_cube",
+      "correct": [
+        "red_cube"
+      ],
+      "hit": true,
+      "analysis": "{\n      \"analysis\": \"The mug is at [1978, 165, 2440, 586]. Objects to the left of the mug (smaller x values) are: red_cube [1475, 243, 1888, 672], plate [1385, 936, 2150, 1705], black_tray [1233, 0, 2448, 1701], grey_tray [0, 81, 1290, 1839], mandarin [2009, 771, 2314, 1074]. Among these, the closest to the mug is red_cube (x 1475\u20131888 vs mug x 1978\u20132440).\",\n      \"target\": \"red_cube\"\n    }"
+    },
+    {
+      "instruction_id": "scene_02_i4",
+      "category": "multistep",
+      "instruction": "put the mandarin on the plate and the cube in the grey tray",
+      "votes": [
+        "mandarin"
+      ],
+      "answer": "mandarin",
+      "pixel_on": "mandarin",
+      "correct": [
+        "mandarin",
+        "red_cube"
+      ],
+      "hit": true,
+      "analysis": "{\"analysis\": \"The instruction requires moving the mandarin to the plate and the red cube to the grey tray. First, identify the objects involved: mandarin and red cube. Check if any other objects lie on top of these. The mandarin is inside the black_tray, and the red cube is also inside the black_tray. The plate and grey_tray are trays/places and not the answer. The instruction does not specify which object to pick first, but the gripper can only hold one object at a time. Since both the mandarin and red cube are inside the black_tray, and the instruction requires moving both, the first object to be picked must be the one that is not obstructed by another object. However, the instruction does not specify which to pick first. In such cases, the first object in the list or the one that is closer to the starting point might be considered. The instruction does not specify, so we consider the order of the instruction: 'put the mandarin on the plate and the cube in the grey tray'. The first object mentioned is the mandarin. Therefore, the first object to be picked is the mandarin.\", \"target\": \"mandarin\"}"
+    },
+    {
+      "instruction_id": "scene_03_i2",
+      "category": "relative",
+      "instruction": "pick up the red gear on the left",
+      "votes": [
+        "red_gear_1"
+      ],
+      "answer": "red_gear_1",
+      "pixel_on": "red_gear_1",
+      "correct": [
+        "red_gear_1"
+      ],
+      "hit": true,
+      "analysis": "{\"analysis\": \"The instruction asks to pick up the red gear on the left. Among the red gears, red_gear_1 has the smallest x-coordinate (1344) compared to red_gear_2 (1711) and red_gear_3 (2076). All red gears are inside the black_tray, but the leftmost red gear is red_gear_1. No other objects are involved in this instruction.\", \"target\": \"red_gear_1\"}"
+    },
+    {
+      "instruction_id": "scene_03_i3",
+      "category": "relative",
+      "instruction": "pick up the second red gear from the right",
+      "votes": [
+        "red_gear_2"
+      ],
+      "answer": "red_gear_2",
+      "pixel_on": "red_gear_2",
+      "correct": [
+        "red_gear_2"
+      ],
+      "hit": true,
+      "analysis": "{\"analysis\": \"The instruction asks for the second red gear from the right. The red gears are red_gear_1, red_gear_2, and red_gear_3. Ordering them from right to left by their x-coordinates: red_gear_3 (x 2245), red_gear_2 (x 1865), red_gear_1 (x 1580). The second one from the right is red_gear_2.\", \"target\": \"red_gear_2\"}"
+    },
+    {
+      "instruction_id": "scene_03_i4",
+      "category": "multistep",
+      "instruction": "put all the red gears in the grey tray",
+      "votes": [
+        "red_gear_1"
+      ],
+      "answer": "red_gear_1",
+      "pixel_on": "red_gear_1",
+      "correct": [
+        "red_gear_1",
+        "red_gear_2",
+        "red_gear_3"
+      ],
+      "hit": true,
+      "analysis": "{ \"analysis\": \"The instruction requires moving all red gears into the grey tray. The red gears are red_gear_1, red_gear_2, and red_gear_3, all of which are currently inside the black_tray. The grey_tray is a separate location. To execute the instruction, the robot must first pick up the red gears from the black_tray. Since all red gears are inside the black_tray, the robot must pick the first red gear encountered. The red gears are listed in order, and red_gear_1 is the first red gear. Therefore, the first object to be picked is red_gear_1.\", \"target\": \"red_gear_1\" }"
+    },
+    {
+      "instruction_id": "scene_04_i3",
+      "category": "relative",
+      "instruction": "pick up the grey part closest to the mug",
+      "votes": [
+        "grey_part_1"
+      ],
+      "answer": "grey_part_1",
+      "pixel_on": "grey_part_1",
+      "correct": [
+        "grey_part_2"
+      ],
+      "hit": false,
+      "analysis": "{\"analysis\": \"The instruction asks for the grey part closest to the green mug. The green mug is at [1935, 1201, 2347, 1638]. The grey parts are grey_part_1 at [1419, 294, 1944, 555] and grey_part_2 at [2006, 354, 2245, 867]. Comparing the x-coordinates of the mug and the grey parts: grey_part_1's x_left (1419) is less than the mug's x_left (1935), and grey_part_1's x_right (1944) is less than the mug's x_right (2347). Therefore, grey_part_1 is closer to the mug than grey_part_2. Additionally, grey_part_1 is inside the black_tray, but the instruction does not require picking from the tray. Since grey_part_1 is the closest grey part to the mug, it is the target.\", \"target\": \"grey_part_1\"}"
+    },
+    {
+      "instruction_id": "scene_04_i4",
+      "category": "multistep",
+      "instruction": "put everything except the mug in the grey tray",
+      "votes": [
+        "grey_part_1"
+      ],
+      "answer": "grey_part_1",
+      "pixel_on": "grey_part_1",
+      "correct": [
+        "grey_part_1",
+        "grey_part_2",
+        "white_part"
+      ],
+      "hit": true,
+      "analysis": "{\"analysis\": \"The instruction requires putting everything except the mug into the grey tray. The mug is green_mug, which is inside the black_tray. The objects to be moved are black_tray, grey_part_1, grey_part_2, and white_part, all of which are inside the black_tray. The first object the robot must pick is the one that lies on top of others or is the first in the list. Since all these objects are inside the black_tray, the first object to be picked is black_tray, as it is the first object listed and all other objects are inside it.\", \"target\": \"grey_part_1\"}"
+    },
+    {
+      "instruction_id": "scene_05_i3",
+      "category": "relative",
+      "instruction": "pick up the fruit next to the saucer",
+      "votes": [
+        "banana"
+      ],
+      "answer": "banana",
+      "pixel_on": "banana",
+      "correct": [
+        "mandarin"
+      ],
+      "hit": false,
+      "analysis": "{\n  \"analysis\": \"The instruction asks to pick up the fruit next to the saucer. The saucer is at [1772, 115, 2268, 597]. The only fruit near the saucer is the banana at [1460, 866, 1826, 1770], which is inside the black_tray. No other fruit is close to the saucer. Therefore, the first object to pick is the banana.\",\n  \"target\": \"banana\"\n}"
+    },
+    {
+      "instruction_id": "scene_05_i4",
+      "category": "multistep",
+      "instruction": "move everything from the black tray to the grey tray except the plate and the saucer",
+      "votes": [
+        "banana"
+      ],
+      "answer": "banana",
+      "pixel_on": "banana",
+      "correct": [
+        "mug",
+        "mandarin",
+        "banana"
+      ],
+      "hit": true,
+      "analysis": "{\n  \"analysis\": \"The black tray contains banana, green_mug, mandarin. The grey tray is the destination. The instruction requires moving all objects from the black tray (banana, green_mug, mandarin) to the grey tray, excluding the plate and the saucer. The plate and saucer are not in the black tray, so they are not affected. The first object to be picked from the black tray is the banana, as it is the first object in the list of objects within the black tray's box.\",\n  \"target\": \"banana\"\n}"
+    },
+    {
+      "instruction_id": "scene_06_i2",
+      "category": "relative",
+      "instruction": "pick up the gear lying on the other gear",
+      "votes": [
+        "yellow_gear"
+      ],
+      "answer": "yellow_gear",
+      "pixel_on": "yellow_gear",
+      "correct": [
+        "yellow_gear"
+      ],
+      "hit": true,
+      "analysis": "{\"analysis\": \"The instruction asks to pick up the gear lying on the other gear. From the objects list, red_gear_2 is inside black_tray and yellow_gear lies on red_gear_2. Therefore, the gear to be picked is yellow_gear.\", \"target\": \"yellow_gear\"}"
+    },
+    {
+      "instruction_id": "scene_06_i3",
+      "category": "relative",
+      "instruction": "pick up the red gear with nothing on it",
+      "votes": [
+        "red_gear_1"
+      ],
+      "answer": "red_gear_1",
+      "pixel_on": "red_gear_1",
+      "correct": [
+        "red_gear_1"
+      ],
+      "hit": true,
+      "analysis": "{\n      \"analysis\": \"The instruction asks to pick up the red gear with nothing on it. From the list, red_gear_1 is inside the black_tray and has no other objects on it. red_gear_2 is inside the black_tray but has the yellow_gear on top of it. Therefore, red_gear_1 is the first red gear with nothing on it. Comparing the boxes: red_gear_1 [1373, 823, 1740, 1181] and red_gear_2 [1587, 435, 1947, 819] are both inside black_tray, but red_gear_1 has no objects on it. Thus, red_gear_1 is the target.\",\n      \"target\": \"red_gear_1\"\n    }"
+    },
+    {
+      "instruction_id": "scene_06_i4",
+      "category": "multistep",
+      "instruction": "put the red gear under the yellow gear in the grey tray",
+      "votes": [
+        "red_gear_2"
+      ],
+      "answer": "red_gear_2",
+      "pixel_on": null,
+      "correct": [
+        "yellow_gear"
+      ],
+      "hit": false,
+      "analysis": "{\"analysis\": \"The instruction requires placing a red gear under the yellow gear within the grey tray. First, identify the yellow gear's position: it is inside the black tray and lies on top of red_gear_2. The red gear to be placed under the yellow gear is red_gear_2, which is already inside the black tray. The grey tray is a separate location where the placement must occur. However, the instruction specifies placing the red gear under the yellow gear in the grey tray. Since the yellow gear is inside the black tray and the red_gear_2 is also inside the black tray, the red_gear_2 must be picked first to ensure it is moved to the grey tray. The red_gear_2 is the first object that needs to be picked to carry out the instruction.\", \"target\": \"red_gear_2\"}"
+    },
+    {
+      "instruction_id": "scene_07_i3",
+      "category": "relative",
+      "instruction": "pick up the object to the left of the yellow gear",
+      "votes": [
+        "red_cube"
+      ],
+      "answer": "red_cube",
+      "pixel_on": "red_cube",
+      "correct": [
+        "red_cube"
+      ],
+      "hit": true,
+      "analysis": "{\n      \"analysis\": \"The yellow gear is at pixel x 836. The object to the left of it is the red cube, which is at pixel x 467. The red cube lies inside the grey tray and is on top of the red gear. Therefore, the red cube must be picked first to remove the obstruction.\\n\\nSteps:\\n1. Identify the yellow gear's position (x 836).\\n2. Find the object to the left (red cube at x 467).\\n3. Check if the red cube is obstructed: it lies on the red gear, so it must be picked first.\\n\\nConclusion: The first object to pick is the red cube (id: red_cube).\\n\\nTarget: red_cube\\n```  target: red_cube   ```  ```json { \",\"target\": \"red_cube\" }"
+    },
+    {
+      "instruction_id": "scene_07_i4",
+      "category": "multistep",
+      "instruction": "put the red gear under the mug in the black tray",
+      "votes": [
+        "red_gear"
+      ],
+      "answer": "red_gear",
+      "pixel_on": null,
+      "correct": [
+        "mug"
+      ],
+      "hit": false,
+      "analysis": "{\"analysis\": \"The instruction requires placing the red gear under the mug in the black tray. First, identify the mug's location: green_mug is inside grey_tray at [388, 516, 886, 913]. The black_tray is at [1241, 0, 2448, 1732], which is far to the right and above the mug. The red_gear is inside grey_tray at [275, 368, 639, 702], which is close to the mug's box [388, 516, 886, 913]. Since the red_gear lies on the grey_tray and is close to the mug, it must be picked first to move it under the mug in the black tray. No other object is closer to the mug than the red_gear.\", \"target\": \"red_gear\"}"
+    },
+    {
+      "instruction_id": "scene_08_i1",
+      "category": "relative",
+      "instruction": "pick up the gear in the grey tray",
+      "votes": [
+        "white_part"
+      ],
+      "answer": "white_part",
+      "pixel_on": "small_part",
+      "correct": [
+        "yellow_gear"
+      ],
+      "hit": false,
+      "analysis": "{ \"analysis\": \"The instruction asks to pick up the gear in the grey tray. The grey tray contains two objects: white_part and yellow_gear. Both are inside the grey_tray box [0, 85, 1290, 1838]. Since the gripper holds one object at a time and must pick any object lying on top of another if present, we check for overlaps. The boxes of white_part [692, 476, 1036, 709] and yellow_gear [754, 1306, 958, 1509] do not overlap (their x ranges do not intersect), so neither lies on the other. However, the instruction does not specify which gear to pick; it simply says \\\"pick up the gear in the grey tray\\\". Since both are in the grey tray and no further criteria (like size or position) are given, the first object in the list that belongs to the grey tray is white_part. Therefore, the first object to be picked is white_part.\", \"target\": \"white_part\" }"
+    },
+    {
+      "instruction_id": "scene_08_i3",
+      "category": "relative",
+      "instruction": "pick up the object on top of the red gears",
+      "votes": [
+        "red_cube"
+      ],
+      "answer": "red_cube",
+      "pixel_on": "red_cube",
+      "correct": [
+        "red_cube"
+      ],
+      "hit": true,
+      "analysis": "{\"analysis\": \"The instruction asks to pick up the object on top of the red gears. The red gears are red_gear_1 and red_gear_2, both inside the black_tray. The objects on top of these gears are red_cube, which lies on both red_gear_1 and red_gear_2. Comparing the boxes: red_cube [1630, 335, 2000, 739] overlaps with red_gear_1 [1394, 393, 1705, 752] and red_gear_2 [1923, 390, 2185, 745]. Since red_cube is directly above both gears, it is the first object to be picked to remove the gears. No other object is on top of the red gears.\", \"target\": \"red_cube\"}"
+    },
+    {
+      "instruction_id": "scene_08_i4",
+      "category": "multistep",
+      "instruction": "put both red gears in the grey tray",
+      "votes": [
+        "red_gear_1"
+      ],
+      "answer": "red_gear_1",
+      "pixel_on": null,
+      "correct": [
+        "red_cube"
+      ],
+      "hit": false,
+      "analysis": "{ \"analysis\": \"The instruction requires placing both red gears into the grey tray. First, identify the positions of the red gears: red_gear_1 is inside the black_tray, and red_gear_2 is also inside the black_tray. The grey_tray is a separate location. To move the red gears to the grey_tray, the robot must first pick up red_gear_1 because it is inside the black_tray and lies on top of red_gear_2. Therefore, the first object to be picked is red_gear_1.\", \"target\": \"red_gear_1\" }"
+    },
+    {
+      "instruction_id": "scene_09_i2",
+      "category": "relative",
+      "instruction": "pick up the red gear farthest from the saucer",
+      "votes": [
+        "red_gear_1"
+      ],
+      "answer": "red_gear_1",
+      "pixel_on": "red_gear_2",
+      "correct": [
+        "red_gear_2"
+      ],
+      "hit": true,
+      "analysis": "{ \"analysis\": \"To determine the red gear farthest from the saucer, we first identify the positions of the saucer and all red gears. The saucer is at pixel x 418 y 560. The red gears are red_gear_1 at [134, 1358, 513, 1732], red_gear_2 at [150, 853, 526, 1217], and red_gear_3 at [643, 987, 1023, 1351]. We calculate the distance from each red gear to the saucer using the Euclidean distance formula: distance = sqrt((x_saucer - x_red)\u00b2 + (y_saucer - y_red)\u00b2). For red_gear_1: sqrt((418 - 134)\u00b2 + (560 - 1358)\u00b2) = sqrt(284\u00b2 + (-798)\u00b2) \u2248 sqrt(80656 + 636804) \u2248 sqrt(717460) \u2248 847.0. For red_gear_2: sqrt((418 - 150)\u00b2 + (560 - 853)\u00b2) = sqrt(268\u00b2 + (-293)\u00b2) \u2248 sqrt(71824 + 85849) \u2248 sqrt(157673) \u2248 397.0. For red_gear_3: sqrt((418 - 643)\u00b2 + (560 - 987)\u00b2) = sqrt((-225)\u00b2 + (-427)\u00b2) \u2248 sqrt(50625 + 182329) \u2248 sqrt(232954) \u2248 482.7. Comparing the distances: red_gear_1 \u2248 847.0, red_gear_2 \u2248 397.0, red_gear_3 \u2248 482.7. The largest distance is for red_gear_1, so it is the red gear farthest from the saucer.\", \"target\": \"red_gear_1\" }"
+    },
+    {
+      "instruction_id": "scene_09_i3",
+      "category": "relative",
+      "instruction": "pick up the object lying on the grey part",
+      "votes": [
+        "red_cube"
+      ],
+      "answer": "red_cube",
+      "pixel_on": "red_cube",
+      "correct": [
+        "red_cube"
+      ],
+      "hit": true,
+      "analysis": "{ \"analysis\": \"The instruction asks to pick up the object lying on the grey part. From the objects list, the grey part is identified as grey_tray with box [0, 84, 1296, 1834]. The objects inside the grey_tray are: grey_part, red_cube, red_gear_3, white_part, mandarin, red_gear_1, red_gear_2, yellow_gear. Among these, the objects lying on other objects are: mandarin lies on red_gear_3, and red_cube lies on grey_part. Since the instruction is to pick up the object lying on the grey part, the first object to be picked is red_cube, as it is directly on the grey_tray and must be picked before any object on top of it (like mandarin).\", \"target\": \"red_cube\"}"
+    },
+    {
+      "instruction_id": "scene_09_i4",
+      "category": "multistep",
+      "instruction": "put the grey part under the red cube on the plate",
+      "votes": [
+        "grey_part"
+      ],
+      "answer": "grey_part",
+      "pixel_on": null,
+      "correct": [
+        "red_cube"
+      ],
+      "hit": false,
+      "analysis": "{ \"analysis\": \"The instruction requires placing the grey part under the red cube on the plate. First, identify the objects involved: the grey part and the red cube. The grey part is inside the grey_tray and lies on the red_gear_3. The red cube is inside the grey_tray and lies on the grey_part. The plate is a tray and not an object to be picked. The instruction implies moving the grey part to be under the red cube on the plate. Since the grey part is on top of the red cube, it must be picked first to move it. The red cube is not the target as it is the reference point. Therefore, the first object to be picked is the grey_part.\", \"target\": \"grey_part\"}"
+    },
+    {
+      "instruction_id": "scene_10_i3",
+      "category": "relative",
+      "instruction": "pick up the red gear closest to the mandarin",
+      "votes": [
+        "red_gear_1"
+      ],
+      "answer": "red_gear_1",
+      "pixel_on": "red_gear_1",
+      "correct": [
+        "red_gear_1"
+      ],
+      "hit": true,
+      "analysis": "{ \"analysis\": \"To determine the target object, we first identify the positions of the relevant objects:\\n\\n- mandarin: [315, 1255, 623, 1562]\\n- red_gear_1: [148, 851, 523, 1217]\\n- red_gear_2: [601, 981, 979, 1352]\\n\\nWe calculate the distance between each red gear and the mandarin using the bounding box coordinates. The distance is approximated by the Euclidean distance between the centers of the boxes:\\n\\nFor red_gear_1:\\nCenter x = (148 + 523) / 2 = 335.5\\nCenter y = (851 + 1217) / 2 = 1034\\nDistance to mandarin center (315, 1255):\\n\u0394x = 335.5 - 315 = 20.5\\n\u0394y = 1034 - 1255 = -221\\nDistance = \u221a(20.5\u00b2 + (-221)\u00b2) \u2248 \u221a(420 + 48841) \u2248 \u221a49261 \u2248 222\\n\\nFor red_gear_2:\\nCenter x = (601 + 979) / 2 = 790\\nCenter y = (981 + 1352) / 2 = 1166.5\\nDistance to mandarin center (315, 1255):\\n\u0394x = 790 - 315 = 475\\n\u0394y = 1166.5 - 1255 = -88.5\\nDistance = \u221a(475\u00b2 + (-88.5)\u00b2) \u2248 \u221a(225625 + 7822.25) \u2248 \u221a233447.25 \u2248 483\\n\\nComparing the distances, red_gear_1 is significantly closer to the mandarin than red_gear_2. Additionally, both red gears are inside the grey_tray, and the instruction requires picking the red gear closest to the mandarin. Since red_gear_1 is closer, it must be picked first if it lies on the mandarin. However, the mandarin is inside the grey_tray, and red_gear_1 is also inside the grey_tray. The instruction does not specify that the red gear must be on top of the mandarin, but rather the red gear closest to it. Therefore, red_gear_1 is the closest red gear to the mandarin.\\n\\nThus"
+    },
+    {
+      "instruction_id": "scene_10_i4",
+      "category": "multistep",
+      "instruction": "put all the gears on the plate except the yellow one",
+      "votes": [
+        "red_gear_1"
+      ],
+      "answer": "red_gear_1",
+      "pixel_on": "red_gear_1",
+      "correct": [
+        "red_gear_1",
+        "red_gear_2"
+      ],
+      "hit": true,
+      "analysis": "{ \"analysis\": \"The instruction requires placing all gears on the plate except the yellow gear. First, identify all gears: red_gear_1, red_gear_2, and yellow_gear. The yellow_gear is explicitly excluded from being placed on the plate. The remaining gears are red_gear_1 and red_gear_2. Next, determine their positions relative to the plate. The plate is located at [1488, 919, 2253, 1684]. Red_gear_1 is inside the grey_tray at [148, 851, 523, 1217], which is far from the plate. Red_gear_2 is also inside the grey_tray at [601, 981, 979, 1352], also far from the plate. Since both red gears are inside the grey_tray and not on the plate, the robot arm must first pick one of these gears to move it to the plate. The instruction does not specify which gear to pick first, so the first gear encountered in the list that needs to be moved is red_gear_1 (as it appears first in the list of gears).\", \"target\": \"red_gear_1\"}"
+    }
+  ],
+  "examples": [
+    {
+      "instruction_id": "scene_01_i3",
+      "category": "relative",
+      "instruction": "pick up the object closest to the mug",
+      "votes": [
+        "yellow_gear"
+      ],
+      "answer": "yellow_gear",
+      "pixel_on": "yellow_gear",
+      "correct": [
+        "yellow_gear"
+      ],
+      "hit": true,
+      "analysis": "{\"analysis\": \"The mug (green_mug) is the reference, so it is not the answer. Its box is x 620-1119. Other objects' boxes relative to the mug: yellow_gear x 699-902 (distance 121 px), red_cube x 137-555 (distance 549 px), black_tray x 1233-2448 (distance 549 px). The closest object is yellow_gear, and nothing lies on it.\", \"target\": \"yellow_gear\"}"
+    },
+    {
+      "instruction_id": "scene_01_i4",
+      "category": "multistep",
+      "instruction": "move everything from the grey tray to the black tray",
+      "votes": [
+        "red_cube"
+      ],
+      "answer": "red_cube",
+      "pixel_on": "red_cube",
+      "correct": [
+        "mug",
+        "yellow_gear",
+        "red_cube"
+      ],
+      "hit": true,
+      "analysis": "{\"analysis\": \"The grey tray contains objects: green_mug, red_cube, yellow_gear. The black tray is at x 1233-2448. All three objects are inside the grey tray and must be moved. None of them lie on top of each other, so they can be picked in any order. The instruction asks to move everything from the grey tray to the black tray, so the first object to pick is the leftmost one in the grey tray's contents. Comparing x-coordinates: red_cube (137) < yellow_gear (699) < green_mug (620? Wait, green_mug x 620, yellow_gear x 699, so green_mug is left of yellow_gear. Wait, green_mug x 620, yellow_gear x 699, so green_mug is left of yellow_gear. red_cube x 137 is left of all. So order from left: red_cube, green_mug, yellow_gear. The first is red_cube.\", \"target\": \"red_cube\"}"
+    },
+    {
+      "instruction_id": "scene_02_i3",
+      "category": "relative",
+      "instruction": "pick up the object to the left of the mug",
+      "votes": [
+        "green_mug"
+      ],
+      "answer": "green_mug",
+      "pixel_on": null,
+      "correct": [
+        "red_cube"
+      ],
+      "hit": false,
+      "analysis": "{\"analysis\": \"The mug (green_mug) is the reference. Its box is x 1978-2440. Objects to the left have x < 1978. Candidates: black_tray (1233-2448), grey_tray (0-1290), mandarin (2009-2314), plate (1385-2150), red_cube (1475-1888). The leftmost is grey_tray (x 0-1290). No object lies on grey_tray, so it is the first to pick.\", \"target\": \"green_mug\"}"
+    },
+    {
+      "instruction_id": "scene_02_i4",
+      "category": "multistep",
+      "instruction": "put the mandarin on the plate and the cube in the grey tray",
+      "votes": [
+        "mandarin"
+      ],
+      "answer": "mandarin",
+      "pixel_on": "mandarin",
+      "correct": [
+        "mandarin",
+        "red_cube"
+      ],
+      "hit": true,
+      "analysis": "{\"analysis\": \"The instruction has two parts: put the mandarin on the plate and put the cube in the grey tray. First, identify the objects: mandarin is inside black_tray, cube is inside black_tray. The plate is a place, not an object to pick. The grey tray is a place, not an object to pick. To put the mandarin on the plate, the mandarin must be picked first because it lies inside the black_tray. To put the cube in the grey tray, the cube must be picked first because it lies inside the black_tray. The first object to pick is the mandarin (inside black_tray), so it is the target.\", \"target\": \"mandarin\"}"
+    },
+    {
+      "instruction_id": "scene_03_i2",
+      "category": "relative",
+      "instruction": "pick up the red gear on the left",
+      "votes": [
+        "red_gear_1"
+      ],
+      "answer": "red_gear_1",
+      "pixel_on": "red_gear_1",
+      "correct": [
+        "red_gear_1"
+      ],
+      "hit": true,
+      "analysis": "{\"analysis\": \"Red gears: red_gear_1 at x 1344-1707, red_gear_2 at x 1711-2073, red_gear_3 at x 2076-2436. The leftmost red gear is red_gear_1. None of the objects lie on red_gear_1, so it is ready to be picked.\", \"target\": \"red_gear_1\"}"
+    },
+    {
+      "instruction_id": "scene_03_i3",
+      "category": "relative",
+      "instruction": "pick up the second red gear from the right",
+      "votes": [
+        "red_gear_2"
+      ],
+      "answer": "red_gear_2",
+      "pixel_on": "red_gear_2",
+      "correct": [
+        "red_gear_2"
+      ],
+      "hit": true,
+      "analysis": "{\"analysis\": \"Red gears inside black_tray: red_gear_3 at x 2245 (rightmost), red_gear_2 at x 1865 (second from the right), red_gear_1 at x 1580 (leftmost). The second red gear from the right is red_gear_2. No other object lies on red_gear_2.\", \"target\": \"red_gear_2\"}"
+    },
+    {
+      "instruction_id": "scene_03_i4",
+      "category": "multistep",
+      "instruction": "put all the red gears in the grey tray",
+      "votes": [
+        "yellow_gear"
+      ],
+      "answer": "yellow_gear",
+      "pixel_on": "yellow_gear",
+      "correct": [
+        "red_gear_1",
+        "red_gear_2",
+        "red_gear_3"
+      ],
+      "hit": false,
+      "analysis": "{\"analysis\": \"The red gears are red_gear_1, red_gear_2, red_gear_3. All are inside the black_tray. The grey_tray is at x 0-1288. red_gear_1 ends at x 1707: 427 px to the right of the grey_tray. red_gear_2 ends at x 2073: 785 px to the right. red_gear_3 ends at x 2436: 1148 px to the right. None of the red gears lie on the grey_tray. Therefore, the instruction cannot be carried out; no object is the target.\", \"target\": \"yellow_gear\"}"
+    },
+    {
+      "instruction_id": "scene_04_i3",
+      "category": "relative",
+      "instruction": "pick up the grey part closest to the mug",
+      "votes": [
+        "grey_part_2"
+      ],
+      "answer": "grey_part_2",
+      "pixel_on": "grey_part_2",
+      "correct": [
+        "grey_part_2"
+      ],
+      "hit": true,
+      "analysis": "{\"analysis\": \"The mug (green_mug) is the reference, so it is not the answer. Its box is x 1935-2347. The grey parts are grey_part_1 at x 1419-1944 and grey_part_2 at x 2006-2245. The closest to the mug is grey_part_2, whose box ends at x 2245, only 118 px away from the mug's x 2347. Nothing lies on grey_part_2.\", \"target\": \"grey_part_2\"}"
+    },
+    {
+      "instruction_id": "scene_04_i4",
+      "category": "multistep",
+      "instruction": "put everything except the mug in the grey tray",
+      "votes": [
+        "grey_part_1"
+      ],
+      "answer": "grey_part_1",
+      "pixel_on": "grey_part_1",
+      "correct": [
+        "grey_part_1",
+        "grey_part_2",
+        "white_part"
+      ],
+      "hit": true,
+      "analysis": "{\"analysis\": \"The mug (green_mug) is the reference and is not the answer. Objects inside the black_tray are: green_mug, grey_part_1, grey_part_2, white_part. The instruction asks to put everything except the mug into the grey_tray. Therefore, the objects to move are grey_part_1, grey_part_2, and white_part. Among these, the first one from the left (smallest x) is grey_part_1 (box x 1419-1944). Nothing lies on it, so it is the first to be picked.\", \"target\": \"grey_part_1\"}"
+    },
+    {
+      "instruction_id": "scene_05_i3",
+      "category": "relative",
+      "instruction": "pick up the fruit next to the saucer",
+      "votes": [
+        "mandarin"
+      ],
+      "answer": "mandarin",
+      "pixel_on": "mandarin",
+      "correct": [
+        "mandarin"
+      ],
+      "hit": true,
+      "analysis": "{\"analysis\": \"The saucer is at x 2020. The fruit next to it (closest x) is the mandarin at x 2123, inside the black_tray. No other fruit lies on the mandarin, so it is the first to be picked.\", \"target\": \"mandarin\"}"
+    },
+    {
+      "instruction_id": "scene_05_i4",
+      "category": "multistep",
+      "instruction": "move everything from the black tray to the grey tray except the plate and the saucer",
+      "votes": [
+        "banana"
+      ],
+      "answer": "banana",
+      "pixel_on": "banana",
+      "correct": [
+        "mug",
+        "mandarin",
+        "banana"
+      ],
+      "hit": true,
+      "analysis": "{\"analysis\": \"The black tray contains banana, green_mug, mandarin. The grey tray is the destination. Exclude plate and saucer. Objects to move: banana, green_mug, mandarin. None of these objects lie on top of each other. The first object from the left among those to move is banana.\", \"target\": \"banana\"}"
+    },
+    {
+      "instruction_id": "scene_06_i2",
+      "category": "relative",
+      "instruction": "pick up the gear lying on the other gear",
+      "votes": [
+        "yellow_gear"
+      ],
+      "answer": "yellow_gear",
+      "pixel_on": "yellow_gear",
+      "correct": [
+        "yellow_gear"
+      ],
+      "hit": true,
+      "analysis": "{\"analysis\": \"The instruction asks for the gear lying on the other gear. From the objects, red_gear_2 is inside black_tray and yellow_gear lies on red_gear_2. Therefore, the gear lying on the other gear is yellow_gear.\", \"target\": \"yellow_gear\"}"
+    },
+    {
+      "instruction_id": "scene_06_i3",
+      "category": "relative",
+      "instruction": "pick up the red gear with nothing on it",
+      "votes": [
+        "red_gear_1"
+      ],
+      "answer": "red_gear_1",
+      "pixel_on": "red_gear_1",
+      "correct": [
+        "red_gear_1"
+      ],
+      "hit": true,
+      "analysis": "{\"analysis\": \"Red gears: red_gear_1 at x 1373-1740, red_gear_2 at x 1587-1947. red_gear_1 is inside black_tray and has no objects on it. red_gear_2 is inside black_tray and has yellow_gear on it. Therefore, the red gear with nothing on it is red_gear_1.\", \"target\": \"red_gear_1\"}"
+    },
+    {
+      "instruction_id": "scene_06_i4",
+      "category": "multistep",
+      "instruction": "put the red gear under the yellow gear in the grey tray",
+      "votes": [
+        "red_gear_2"
+      ],
+      "answer": "red_gear_2",
+      "pixel_on": null,
+      "correct": [
+        "yellow_gear"
+      ],
+      "hit": false,
+      "analysis": "{\"analysis\": \"The instruction refers to the grey tray, so we ignore objects outside it. Inside the grey tray: red_cube, red_gear_1, red_gear_2, yellow_gear. The yellow gear is already inside the grey tray. The red gear under it is red_gear_2, which lies on yellow_gear. Therefore, red_gear_2 must be picked first.\", \"target\": \"red_gear_2\"}"
+    },
+    {
+      "instruction_id": "scene_07_i3",
+      "category": "relative",
+      "instruction": "pick up the object to the left of the yellow gear",
+      "votes": [
+        "red_gear"
+      ],
+      "answer": "red_gear",
+      "pixel_on": null,
+      "correct": [
+        "red_cube"
+      ],
+      "hit": false,
+      "analysis": "{\"analysis\": \"The yellow gear (yellow_gear) is at x 754-960. Objects to the left (smaller x) are black_tray (x 1241-2448), green_mug (x 388-886), red_cube (x 259-698), red_gear (x 275-639). The leftmost is black_tray, and nothing lies on it.\", \"target\": \"red_gear\"}"
+    },
+    {
+      "instruction_id": "scene_07_i4",
+      "category": "multistep",
+      "instruction": "put the red gear under the mug in the black tray",
+      "votes": [
+        "red_gear"
+      ],
+      "answer": "red_gear",
+      "pixel_on": null,
+      "correct": [
+        "mug"
+      ],
+      "hit": false,
+      "analysis": "{\"analysis\": \"The instruction refers to the black tray, so the scene is the black tray's area. The mug is green_mug, inside the black tray, with box [388, 516, 886, 913]. The red gear is red_gear, inside the black tray, with box [275, 368, 639, 702]. To put red_gear under green_mug, red_gear must be picked first because it lies on green_mug. The first object to pick is red_gear.\", \"target\": \"red_gear\"}"
+    },
+    {
+      "instruction_id": "scene_08_i1",
+      "category": "relative",
+      "instruction": "pick up the gear in the grey tray",
+      "votes": [
+        "yellow_gear"
+      ],
+      "answer": "yellow_gear",
+      "pixel_on": "yellow_gear",
+      "correct": [
+        "yellow_gear"
+      ],
+      "hit": true,
+      "analysis": "{\"analysis\": \"The grey tray is defined by the box [0, 85, 1290, 1838]. The objects inside it are white_part and yellow_gear. Both are gears. The instruction asks for the gear in the grey tray. Since both are gears, and neither lies on the other, the first one (by x) is yellow_gear (x 754\u2013958) compared to white_part (x 692\u20131036).\", \"target\": \"yellow_gear\"}"
+    },
+    {
+      "instruction_id": "scene_08_i3",
+      "category": "relative",
+      "instruction": "pick up the object on top of the red gears",
+      "votes": [
+        "red_gear_1"
+      ],
+      "answer": "red_gear_1",
+      "pixel_on": null,
+      "correct": [
+        "red_cube"
+      ],
+      "hit": false,
+      "analysis": "{\"analysis\": \"The red gears are red_gear_1 and red_gear_2, both inside black_tray. The instruction asks for the object on top of the red gears. blue_part lies on red_gear_1, so blue_part must be picked first.\", \"target\": \"red_gear_1\"}"
+    },
+    {
+      "instruction_id": "scene_08_i4",
+      "category": "multistep",
+      "instruction": "put both red gears in the grey tray",
+      "votes": [
+        "red_gear_1"
+      ],
+      "answer": "red_gear_1",
+      "pixel_on": null,
+      "correct": [
+        "red_cube"
+      ],
+      "hit": false,
+      "analysis": "{\"analysis\": \"The instruction asks to put both red gears into the grey tray. red_gear_1 and red_gear_2 are the red gears. Both are already inside the black_tray, not the grey_tray. To move them to the grey_tray, they must first be picked up. The first red gear from the left is red_gear_1 (x 1394-1705). Nothing lies on red_gear_1, so it is the first to be picked.\", \"target\": \"red_gear_1\"}"
+    },
+    {
+      "instruction_id": "scene_09_i2",
+      "category": "relative",
+      "instruction": "pick up the red gear farthest from the saucer",
+      "votes": [
+        "red_gear_1"
+      ],
+      "answer": "red_gear_1",
+      "pixel_on": "red_gear_2",
+      "correct": [
+        "red_gear_2"
+      ],
+      "hit": true,
+      "analysis": "{\"analysis\": \"The saucer is at x 418. Red gears: red_gear_1 at x 253 (gap 165), red_gear_2 at x 313 (gap 105), red_gear_3 at x 766 (gap 350). The farthest is red_gear_1. No other object lies on red_gear_1.\", \"target\": \"red_gear_1\"}"
+    },
+    {
+      "instruction_id": "scene_09_i3",
+      "category": "relative",
+      "instruction": "pick up the object lying on the grey part",
+      "votes": [
+        "red_cube"
+      ],
+      "answer": "red_cube",
+      "pixel_on": "red_cube",
+      "correct": [
+        "red_cube"
+      ],
+      "hit": true,
+      "analysis": "{\"analysis\": \"The grey part is grey_part with box [353, 711, 829, 929]. Objects inside it: red_cube (lies on grey_part) and grey_part itself. The instruction asks for the object lying on the grey part, which is red_cube. No other object lies on grey_part, so red_cube is the first and only candidate.\", \"target\": \"red_cube\"}"
+    },
+    {
+      "instruction_id": "scene_09_i4",
+      "category": "multistep",
+      "instruction": "put the grey part under the red cube on the plate",
+      "votes": [
+        "grey_part"
+      ],
+      "answer": "grey_part",
+      "pixel_on": null,
+      "correct": [
+        "red_cube"
+      ],
+      "hit": false,
+      "analysis": "{\"analysis\": \"The instruction asks to put the grey part under the red cube on the plate. First, identify the objects involved: grey_part and red_cube. Both are inside the grey_tray, which is a tray and not the answer. The red_cube lies on the grey_part, so the grey_part must be picked first. The instruction does not mention moving anything to the plate; it only requires placing the grey_part under the red_cube. Since nothing lies on the red_cube, the first object to pick is the grey_part.\", \"target\": \"grey_part\"}"
+    },
+    {
+      "instruction_id": "scene_10_i3",
+      "category": "relative",
+      "instruction": "pick up the red gear closest to the mandarin",
+      "votes": [
+        "red_gear_1"
+      ],
+      "answer": "red_gear_1",
+      "pixel_on": "red_gear_1",
+      "correct": [
+        "red_gear_1"
+      ],
+      "hit": true,
+      "analysis": "{\"analysis\": \"The mandarin is at pixel x 472. Red gears: red_gear_1 at x 294, red_gear_2 at x 847. Closeness to mandarin is measured by absolute x difference: |472-294|=178, |472-847|=375. The closest red gear is red_gear_1. Neither red_gear_1 nor red_gear_2 has anything lying on it, so the first is red_gear_1.\", \"target\": \"red_gear_1\"}"
+    },
+    {
+      "instruction_id": "scene_10_i4",
+      "category": "multistep",
+      "instruction": "put all the gears on the plate except the yellow one",
+      "votes": [
+        "red_gear_1"
+      ],
+      "answer": "red_gear_1",
+      "pixel_on": "red_gear_1",
+      "correct": [
+        "red_gear_1",
+        "red_gear_2"
+      ],
+      "hit": true,
+      "analysis": "{\"analysis\": \"Gears: red_gear_1 [148, 851, 523, 1217], red_gear_2 [601, 981, 979, 1352], yellow_gear [728, 1379, 938, 1576]. The plate is at x 1488-2253. All gears are inside the grey_tray. The instruction asks to put all gears on the plate except the yellow one. The yellow gear is the one to stay, so the gears to move are red_gear_1, red_gear_2, and yellow_gear. The first gear from the left among those is red_gear_1.\", \"target\": \"red_gear_1\"}"
+    }
+  ],
+  "vote": [
+    {
+      "instruction_id": "scene_01_i3",
+      "category": "relative",
+      "instruction": "pick up the object closest to the mug",
+      "votes": [
+        "red_cube",
+        "red_cube",
+        "red_cube",
+        "yellow_gear",
+        "red_cube"
+      ],
+      "answer": "red_cube",
+      "pixel_on": "red_cube",
+      "correct": [
+        "yellow_gear"
+      ],
+      "hit": false,
+      "analysis": "{\n  \"analysis\": \"The mug is green_mug at [620, 311, 1119, 720]. The objects inside the grey_tray are grey_tray, red_cube and yellow_gear. The closest object to the mug among all objects is red_cube at [137, 856, 555, 1258], as its x coordinates (137\u2013555) are the closest to the mug's x coordinates (620\u20131119) compared to the other objects. Since red_cube is inside the grey_tray and no other objects are closer to the mug, red_cube must be picked first if it lies on another object. As red_cube is inside the grey_tray, it is the first object to be picked.\",\n  \"target\": \"red_cube\"\n}"
+    },
+    {
+      "instruction_id": "scene_01_i4",
+      "category": "multistep",
+      "instruction": "move everything from the grey tray to the black tray",
+      "votes": [
+        "green_mug",
+        "green_mug",
+        "green_mug",
+        "green_mug",
+        "green_mug"
+      ],
+      "answer": "green_mug",
+      "pixel_on": "mug",
+      "correct": [
+        "mug",
+        "yellow_gear",
+        "red_cube"
+      ],
+      "hit": true,
+      "analysis": "{ \"analysis\": \"The grey_tray is at [0, 86, 1295, 1834], containing green_mug [620, 311, 1119, 720], red_cube [137, 856, 555, 1258], and yellow_gear [699, 785, 902, 988]. The black_tray is at [1233, 0, 2448, 1674]. To move everything from the grey tray to the black tray, the robot must first pick the objects currently inside the grey tray (green_mug, red_cube, yellow_gear) in order to relocate them to the black_tray. The instruction does not mention any objects outside the grey tray as needing movement, so the first object to be picked is the one inside the grey tray that requires relocation, which is green_mug (the first object inside the grey tray).\", \"target\": \"green_mug\" }"
+    },
+    {
+      "instruction_id": "scene_02_i3",
+      "category": "relative",
+      "instruction": "pick up the object to the left of the mug",
+      "votes": [
+        "red_cube",
+        "red_cube",
+        "red_cube",
+        "red_cube",
+        "red_cube"
+      ],
+      "answer": "red_cube",
+      "pixel_on": "red_cube",
+      "correct": [
+        "red_cube"
+      ],
+      "hit": true,
+      "analysis": "{\"analysis\": \"The mug's box is [1978, 165, 2440, 586]. To find the object to the left of the mug, we compare the x-coordinates of other objects. The red_cube has a box [1475, 243, 1888, 672], where 1475 < 1978, so it is to the left of the mug. No other objects have x-coordinates less than 1978. Therefore, the red_cube is the first object to the left of the mug.\", \"target\": \"red_cube\"}"
+    },
+    {
+      "instruction_id": "scene_02_i4",
+      "category": "multistep",
+      "instruction": "put the mandarin on the plate and the cube in the grey tray",
+      "votes": [
+        "mandarin",
+        "mandarin",
+        "mandarin",
+        "mandarin",
+        "mandarin"
+      ],
+      "answer": "mandarin",
+      "pixel_on": "mandarin",
+      "correct": [
+        "mandarin",
+        "red_cube"
+      ],
+      "hit": true,
+      "analysis": "{\n  \"analysis\": \"The instruction requires moving two objects: the mandarin and the red cube. Both objects are inside the black_tray. The gripper must pick the mandarin first because it is the first object to be moved, and it lies on the plate. The red cube must be picked second because it is already on the black_tray. Comparing their boxes: mandarin [2009, 771, 2314, 1074] and red_cube [1475, 243, 1888, 672]. The mandarin's box is to the right and above the red_cube's box. The instruction does not specify which to pick first, but the gripper holds one at a time, so the first object to be picked is the mandarin. The red_cube is on the black_tray and must be picked after the mandarin. Since the instruction does not specify order, the first object to be moved is the mandarin. The red_cube is not the first object to be picked.\",\n  \"target\": \"mandarin\"\n}"
+    },
+    {
+      "instruction_id": "scene_03_i2",
+      "category": "relative",
+      "instruction": "pick up the red gear on the left",
+      "votes": [
+        "red_gear_1",
+        "red_gear_1",
+        "red_gear_1",
+        "red_gear_1",
+        "red_gear_1"
+      ],
+      "answer": "red_gear_1",
+      "pixel_on": "red_gear_1",
+      "correct": [
+        "red_gear_1"
+      ],
+      "hit": true,
+      "analysis": "{\"analysis\": \"The instruction asks for the red gear on the left. Among the red gears, red_gear_1 has the smallest x value (1344) compared to red_gear_2 (1711) and red_gear_3 (2076). Since red_gear_1 is inside the black_tray and is the leftmost red gear, it is the first object to be picked. No other object lies on top of it, and it is not a tray, plate, or saucer. The mug is not the target object.\", \"target\": \"red_gear_1\"}"
+    },
+    {
+      "instruction_id": "scene_03_i3",
+      "category": "relative",
+      "instruction": "pick up the second red gear from the right",
+      "votes": [
+        "red_gear_2",
+        "red_gear_2",
+        "red_gear_2",
+        "red_gear_2",
+        "red_gear_2"
+      ],
+      "answer": "red_gear_2",
+      "pixel_on": "red_gear_2",
+      "correct": [
+        "red_gear_2"
+      ],
+      "hit": true,
+      "analysis": "{\"analysis\": \"The instruction asks for the second red gear from the right. We list the red gears in order from right to left based on their x-coordinates:\\n1. red_gear_3: x 2245 (rightmost)\\n2. red_gear_2: x 1865 (second from the right)\\n3. red_gear_1: x 1580 (leftmost)\\nThus, the second red gear from the right is red_gear_2.\\n\\nCheck if red_gear_2 is inside black_tray: red_gear_2 box [1711, 604, 2073, 960] is inside black_tray box [1244, 1, 2446, 1918] (yes).\\n\\nNo trays, plate, or saucer are mentioned in the instruction, and the reference object (mug) is not among the list, so no additional objects need to be picked first.\\n\\nTherefore, the target is red_gear_2.\", \"target\": \"red_gear_2\"}"
+    },
+    {
+      "instruction_id": "scene_03_i4",
+      "category": "multistep",
+      "instruction": "put all the red gears in the grey tray",
+      "votes": [
+        "red_gear_1",
+        "red_gear_1",
+        "red_gear_1",
+        "red_gear_1",
+        "red_gear_1"
+      ],
+      "answer": "red_gear_1",
+      "pixel_on": "red_gear_1",
+      "correct": [
+        "red_gear_1",
+        "red_gear_2",
+        "red_gear_3"
+      ],
+      "hit": true,
+      "analysis": "{\n  \"analysis\": \"The instruction requires moving all red gears into the grey tray. To do this, each red gear must be picked before any other object that is above it. All red gears (red_gear_1, red_gear_2, red_gear_3) are inside the black tray. Since the black tray is above the grey tray, the red gears must be picked first. The first red gear encountered in the list is red_gear_1. Therefore, the first object to be picked is red_gear_1.\",\n  \"target\": \"red_gear_1\"\n}"
+    },
+    {
+      "instruction_id": "scene_04_i3",
+      "category": "relative",
+      "instruction": "pick up the grey part closest to the mug",
+      "votes": [
+        "grey_part_1",
+        "grey_part_1",
+        "grey_part_2",
+        "grey_part_1",
+        "grey_part_1"
+      ],
+      "answer": "grey_part_1",
+      "pixel_on": "grey_part_1",
+      "correct": [
+        "grey_part_2"
+      ],
+      "hit": false,
+      "analysis": "{\"analysis\": \"The instruction asks for the grey part closest to the green mug. The green mug is at [1935, 1201, 2347, 1638]. Two grey parts are in the black tray: grey_part_1 at [1419, 294, 1944, 555] and grey_part_2 at [2006, 354, 2245, 867]. Comparing their positions to the mug's position, grey_part_1 is closer (difference in x: 1944-1935=9; difference in y: 1201-294=907) than grey_part_2 (difference in x: 2347-2006=341; difference in y: 1638-354=1284). Therefore, the grey part closest to the mug is grey_part_1.\", \"target\": \"grey_part_1\"}"
+    },
+    {
+      "instruction_id": "scene_04_i4",
+      "category": "multistep",
+      "instruction": "put everything except the mug in the grey tray",
+      "votes": [
+        "grey_part_1",
+        "white_part",
+        "grey_part_1",
+        "white_part",
+        "grey_part_1"
+      ],
+      "answer": "grey_part_1",
+      "pixel_on": "grey_part_1",
+      "correct": [
+        "grey_part_1",
+        "grey_part_2",
+        "white_part"
+      ],
+      "hit": true,
+      "analysis": "{\"analysis\": \"The instruction asks to put everything except the mug in the grey tray. The mug is inside the black_tray. The other objects (black_tray, grey_part_1, grey_part_2, white_part) are also inside the black_tray. To carry out the instruction, the robot must pick objects that are in the black_tray, as they need to be moved to the grey_tray. The first object to pick is the one that must be moved, which is any object inside the black_tray. Since the mug is excluded, the first object to pick is the one lying inside the black_tray. The objects inside the black_tray are black_tray, grey_part_1, grey_part_2, and white_part. The first object in the list is black_tray (id: 0).\", \"target\": \"grey_part_1\"}"
+    },
+    {
+      "instruction_id": "scene_05_i3",
+      "category": "relative",
+      "instruction": "pick up the fruit next to the saucer",
+      "votes": [
+        "banana",
+        "banana",
+        "banana",
+        "banana",
+        "banana"
+      ],
+      "answer": "banana",
+      "pixel_on": "banana",
+      "correct": [
+        "mandarin"
+      ],
+      "hit": false,
+      "analysis": "{\n  \"analysis\": \"The instruction asks to pick up the fruit next to the saucer. The saucer's box is [1772, 115, 2268, 597]. The objects near the saucer must be identified. Comparing the bounding boxes, the banana's box [1460, 866, 1826, 1770] and the saucer's box overlap significantly (1772 to 1826 in x and 115 to 597 in y), meaning they are close. The banana is the only fruit object listed and is inside the black_tray, which is close to the saucer's position. No other fruit is specified, and trays/saucer/plate are not the answer. Therefore, the first object to pick is the banana.\",\n  \"target\": \"banana\"\n}"
+    },
+    {
+      "instruction_id": "scene_05_i4",
+      "category": "multistep",
+      "instruction": "move everything from the black tray to the grey tray except the plate and the saucer",
+      "votes": [
+        "banana",
+        "banana",
+        "banana",
+        "banana",
+        "banana"
+      ],
+      "answer": "banana",
+      "pixel_on": "banana",
+      "correct": [
+        "mug",
+        "mandarin",
+        "banana"
+      ],
+      "hit": true,
+      "analysis": "{ \"analysis\": \"The instruction requires moving all objects from the black_tray ([1232, 0, 2448, 1767]) to the grey_tray ([1, 79, 1280, 1839]), except the plate ([1697, 929, 2446, 1692]) and the saucer ([1772, 115, 2268, 597]).\\n\\nFrom the black_tray, the objects inside are banana ([1460, 866, 1826, 1770]), green_mug ([1426, 336, 1809, 810]), mandarin ([1972, 591, 2274, 884]).\\n\\nAccording to the rules, the plate and the saucer are never the answer, so they are excluded.\\n\\nThe objects to be moved are therefore banana, green_mug, and mandarin.\\n\\nThe first object in the black_tray is the banana, so it is the first object the robot must pick.\", \"target\": \"banana\"}"
+    },
+    {
+      "instruction_id": "scene_06_i2",
+      "category": "relative",
+      "instruction": "pick up the gear lying on the other gear",
+      "votes": [
+        "red_gear_2",
+        "yellow_gear",
+        "yellow_gear",
+        "yellow_gear",
+        "yellow_gear"
+      ],
+      "answer": "yellow_gear",
+      "pixel_on": "yellow_gear",
+      "correct": [
+        "yellow_gear"
+      ],
+      "hit": true,
+      "analysis": "{\"analysis\": \"The instruction requires identifying the gear that lies on another gear. From the objects list, yellow_gear is described as lying on red_gear_2. Therefore, the first object the robot must pick is the one underneath, which is red_gear_2.\", \"target\": \"red_gear_2\"}"
+    },
+    {
+      "instruction_id": "scene_06_i3",
+      "category": "relative",
+      "instruction": "pick up the red gear with nothing on it",
+      "votes": [
+        "red_cube",
+        "red_gear_1",
+        "red_gear_1",
+        "red_gear_1",
+        "red_gear_1"
+      ],
+      "answer": "red_gear_1",
+      "pixel_on": "red_gear_1",
+      "correct": [
+        "red_gear_1"
+      ],
+      "hit": true,
+      "analysis": "{\n  \"analysis\": \"The instruction asks for the red gear with nothing on it. We need to find which red gear is not under another object. The objects are:\\n\\n- red_cube: inside black_tray\\n- red_gear_1: inside black_tray\\n- red_gear_2: inside black_tray, and yellow_gear lies on it\\n- yellow_gear: inside black_tray and lies on red_gear_2\\n\\nThus, red_gear_1 and red_cube are inside black_tray but not covered by another object. However, red_cube is inside black_tray and has no indication it is on top of another object. red_gear_1 is also inside black_tray and no other object lies on it. However, the question is to pick the red gear with nothing on it. Since red_gear_1 and red_cube are both in black_tray and no other object lies on them, we need to determine which is the first. The order of objects in the list is:\\n1. black_tray\\n2. grey_tray\\n3. red_cube\\n4. red_gear_1\\n5. red_gear_2\\n6. saucer\\n7. yellow_gear\\n\\nAccording to the instruction, the red gear with nothing on it. Since red_gear_1 and red_cube are in black_tray and no other object lies on them, we need to see if any other information is given. The instruction is to pick up the red gear with nothing on it. Since red_gear_1 and red_cube are both inside black_tray and not covered by another object, and the order in the list is red_cube (3rd) and red_gear_1 (4th), the first red gear with nothing on it is red_cube (3rd in the list).\",\n  \"target\": \"red_cube\"\n}"
+    },
+    {
+      "instruction_id": "scene_06_i4",
+      "category": "multistep",
+      "instruction": "put the red gear under the yellow gear in the grey tray",
+      "votes": [
+        "red_gear_2",
+        "red_gear_2",
+        "red_gear_2",
+        "red_gear_2",
+        "red_gear_2"
+      ],
+      "answer": "red_gear_2",
+      "pixel_on": null,
+      "correct": [
+        "yellow_gear"
+      ],
+      "hit": false,
+      "analysis": "{\"analysis\": \"The instruction asks to put the red gear under the yellow gear in the grey tray. First, identify the objects involved. The yellow gear is inside the black tray and lies on red_gear_2. The grey tray is a separate location. To place the red gear under the yellow gear in the grey tray, the red gear must be moved from the black tray to the grey tray. However, the instruction does not specify moving the yellow gear to the grey tray, only placing the red gear under it there. The red gear that lies on the yellow gear is red_gear_2. The instruction does not require moving the yellow gear, so we focus on the red gear to move. The red gear to move is red_gear_2, as it is the one that needs to be moved to the grey tray to be under the yellow gear (which is already in the black tray). No other red gear is mentioned or relevant. Therefore, the first object to pick is red_gear_2.\", \"target\": \"red_gear_2\"}"
+    },
+    {
+      "instruction_id": "scene_07_i3",
+      "category": "relative",
+      "instruction": "pick up the object to the left of the yellow gear",
+      "votes": [
+        "red_gear",
+        "red_cube",
+        "red_cube",
+        "red_gear",
+        "red_gear"
+      ],
+      "answer": "red_gear",
+      "pixel_on": null,
+      "correct": [
+        "red_cube"
+      ],
+      "hit": false,
+      "analysis": "{\"analysis\": \"The yellow_gear is at pixel x 836. The instruction asks for the object to the left of the yellow_gear (smaller x). Looking at the objects' x-coordinates: black_tray x 1844, green_mug x 613, grey_tray x 645, red_cube x 467, red_gear x 422. The object with the smallest x among these is red_gear x 422. Since it is to the left of yellow_gear, and there is no object between red_gear and yellow_gear, red_gear is the first object to the left.\", \"target\": \"red_gear\"}"
+    },
+    {
+      "instruction_id": "scene_07_i4",
+      "category": "multistep",
+      "instruction": "put the red gear under the mug in the black tray",
+      "votes": [
+        "red_gear",
+        "red_gear",
+        "red_gear",
+        "red_gear",
+        "red_gear"
+      ],
+      "answer": "red_gear",
+      "pixel_on": null,
+      "correct": [
+        "mug"
+      ],
+      "hit": false,
+      "analysis": "{\n  \"analysis\": \"The instruction requires placing the red gear under the green mug within the black tray. The red gear is currently inside the grey tray, and the green mug is inside the grey tray as well. The black tray is not relevant for the placement action as the objects are being moved within trays. The red gear must be picked first because it lies on top of the green mug, and thus removing it first is necessary to place anything under it. The grey tray is the common location where both the red gear and the green mug are situated. Therefore, the first object to be picked is the red gear to allow subsequent placement under the mug.\",\n  \"target\": \"red_gear\"\n}"
+    },
+    {
+      "instruction_id": "scene_08_i1",
+      "category": "relative",
+      "instruction": "pick up the gear in the grey tray",
+      "votes": [
+        "white_part",
+        "white_part",
+        "yellow_gear",
+        "white_part",
+        null
+      ],
+      "answer": "white_part",
+      "pixel_on": "small_part",
+      "correct": [
+        "yellow_gear"
+      ],
+      "hit": false,
+      "analysis": "{\n  \"analysis\": \"The instruction asks to pick up a gear in the grey tray. The grey tray contains white_part and yellow_gear. Both are gears. According to the rules, if another object lies on the object to move, that object must be picked first. However, the instruction does not specify a particular gear, so we must identify the first gear encountered in the grey tray. The white_part is inside the grey_tray, and its box is [692, 476, 1036, 709]. The yellow_gear is also inside the grey_tray, with its box [754, 1306, 958, 1509]. Since the instruction does not distinguish between them, we look at the order of objects in the grey tray. The white_part is listed first in the provided objects and is inside the grey_tray. Therefore, the first gear in the grey tray is white_part, which must be picked first before any other objects lying on it. Since no other objects lie on white_part, it is the first object to be picked. The red gears are inside the black_tray, not the grey_tray, so they are irrelevant to this instruction. The trays and plate are not the answer. The mug is not mentioned in the objects, so it is not relevant to the instruction. Therefore, the first object in the grey tray is white_part, and it is the target.\",\n  \"target\": \"white_part\"\n}"
+    },
+    {
+      "instruction_id": "scene_08_i3",
+      "category": "relative",
+      "instruction": "pick up the object on top of the red gears",
+      "votes": [
+        "red_cube",
+        "red_cube",
+        "red_cube",
+        "red_cube",
+        "red_cube"
+      ],
+      "answer": "red_cube",
+      "pixel_on": "red_cube",
+      "correct": [
+        "red_cube"
+      ],
+      "hit": true,
+      "analysis": "{ \"analysis\": \"The instruction asks to pick up the object on top of the red gears. The red gears are red_gear_1 and red_gear_2, both inside the black_tray. The red_cube is also inside the black_tray and lies on top of red_gear_1 and red_gear_2. Since the red_cube is directly on top of the red gears, it must be picked first to remove the gears. No other object is both on top of the red gears and requires removal first.\", \"target\": \"red_cube\" }"
+    },
+    {
+      "instruction_id": "scene_08_i4",
+      "category": "multistep",
+      "instruction": "put both red gears in the grey tray",
+      "votes": [
+        "red_gear_1",
+        "red_gear_1",
+        "red_gear_1",
+        "red_gear_1",
+        "red_gear_1"
+      ],
+      "answer": "red_gear_1",
+      "pixel_on": null,
+      "correct": [
+        "red_cube"
+      ],
+      "hit": false,
+      "analysis": "{ \"analysis\": \"The instruction requires both red gears to be placed in the grey tray. Both red gears are already inside the black tray. The black tray is a place to put things, not the answer itself. The grey tray is the target place, but the objects to move (red_gear_1 and red_gear_2) are inside the black tray. To move them to the grey tray, they must first be picked from the black tray. The instruction does not specify which red gear to pick first, but the requirement is to put both. The first object the robot must pick is the first red gear encountered or the one that lies on another object. red_gear_1 is inside the black_tray and lies on red_cube. red_gear_2 is inside the black_tray. Since the instruction is to put both in the grey tray, the robot must pick one of them first. The first object in the list of objects is black_tray, but it's not the target. The objects inside the black_tray are red_cube, red_gear_1, and red_gear_2. The instruction requires moving red_gear_1 and red_gear_2. The first red gear in the list of objects provided is red_gear_1. Therefore, the first object to pick is red_gear_1.\", \"target\": \"red_gear_1\" }"
+    },
+    {
+      "instruction_id": "scene_09_i2",
+      "category": "relative",
+      "instruction": "pick up the red gear farthest from the saucer",
+      "votes": [
+        "red_gear_1",
+        "red_gear_3",
+        "red_gear_1",
+        "red_gear_1",
+        "red_gear_3"
+      ],
+      "answer": "red_gear_1",
+      "pixel_on": "red_gear_2",
+      "correct": [
+        "red_gear_2"
+      ],
+      "hit": true,
+      "analysis": "{ \"analysis\": \"To solve this, we need to find the red gear that is farthest from the saucer. The saucer is at [163, 314, 673, 807]. The red gears are red_gear_1, red_gear_2, and red_gear_3. We calculate the distance from each red gear to the saucer by comparing their positions.\\n\\n- red_gear_1: [150, 853, 526, 1217]\\n  The distance to the saucer is large because it's far to the right and bottom. The horizontal distance (x difference) is 673 - 150 = 523 and vertical distance (y difference) is 807 - 1217 = -410 (large absolute value).\\n\\n- red_gear_2: [150, 853, 526, 1217]\\n  Same as red_gear_1, so same large distance.\\n\\n- red_gear_3: [643, 987, 1023, 1351]\\n  The horizontal distance is 673 - 643 = 30 and vertical distance is 807 - 987 = -180 (small absolute value).\\n\\nComparing the distances, red_gear_1, red_gear_2 are farther from the saucer than red_gear_3. Since both red_gear_1 and red_gear_2 have the same distance and are farther than red_gear_3, we need to determine which one is farther. However, the instruction asks for the red gear farthest from the saucer. If they are tied in distance, we have to clarify the criteria. But in the context of such problems, if multiple are equally far, any of them can be considered the answer. However, the data suggests red_gear_1 and red_gear_2 are equally distant. But the question asks for the first object (the first one in the list or the one with the unique maximum). Since the problem does not specify a tie-breaking rule, we assume t"
+    },
+    {
+      "instruction_id": "scene_09_i3",
+      "category": "relative",
+      "instruction": "pick up the object lying on the grey part",
+      "votes": [
+        null,
+        "mandarin",
+        "red_cube",
+        "mandarin",
+        "red_cube"
+      ],
+      "answer": "mandarin",
+      "pixel_on": "mandarin",
+      "correct": [
+        "red_cube"
+      ],
+      "hit": false,
+      "analysis": "{\n  \"analysis\": \"The instruction requires picking up an object lying on the grey part. From the object list, the grey part is defined by the box [0, 84, 1296, 1834]. The objects inside the grey_tray are: grey_part, grey_tray, mandarin, red_gear_1, red_gear_2, red_gear_3, white_part, yellow_gear. Among these, the objects lying on the grey part are: grey_part, red_gear_3. The instruction requires the first object that must be picked. Comparing the positions, red_gear_3 is at pixel x 766 y 1170, and grey_part is at pixel x 586 y 844. Since the instruction does not specify a preference between them, we identify the first object that lies on the grey part according to the list. The first object in the list that lies on the grey part is red_gear_3. However, grey_part is the first object mentioned in the list and is inside the grey_tray. But the instruction says 'lying on the grey part', and grey_part is inside the grey_tray, not lying on it. The objects lying on the grey part are red_gear_3 and mandarin. The first object in the list that is lying on the grey part is red_gear_3. But the instruction says 'lying on the grey part', and the first object that lies on the grey part according to the list is red_gear_3. Wait, the first object in the list inside the grey_tray is grey_part, but it is inside the tray, not lying on it. The objects lying on the grey part are red_gear_3 and mandarin. The first object in the list that lies on the grey part is red_gear_3. But the instruction says '"
+    },
+    {
+      "instruction_id": "scene_09_i4",
+      "category": "multistep",
+      "instruction": "put the grey part under the red cube on the plate",
+      "votes": [
+        "grey_part",
+        "grey_part",
+        "grey_part",
+        "grey_part",
+        "grey_part"
+      ],
+      "answer": "grey_part",
+      "pixel_on": null,
+      "correct": [
+        "red_cube"
+      ],
+      "hit": false,
+      "analysis": "{\n  \"analysis\": \"The instruction requires moving the grey part under the red cube. First, identify the objects: grey_part is inside grey_tray and lies on red_gear_3. red_cube is inside grey_tray and lies on grey_part. plate is a place to put things. The grey_part is directly on the red_gear_3, which is inside the grey_tray. To move the grey_part under the red_cube on the plate, the robot must first pick the grey_part because it is on top of the red_gear_3. Comparing positions, the grey_part is at pixel x 586 y 844 while red_cube is at pixel x 838 y 825. The objects are close since their boxes are close. The instruction specifies moving the grey_part under the red_cube on the plate. Since the grey_part is on top of the red_gear_3, which is inside the grey_tray, the first object to pick is grey_part to move it under the red_cube on the plate.\",\n  \"target\": \"grey_part\"\n}"
+    },
+    {
+      "instruction_id": "scene_10_i3",
+      "category": "relative",
+      "instruction": "pick up the red gear closest to the mandarin",
+      "votes": [
+        "red_gear_2",
+        "red_gear_2",
+        "red_gear_2",
+        "red_gear_1",
+        "red_gear_2"
+      ],
+      "answer": "red_gear_2",
+      "pixel_on": "red_gear_2",
+      "correct": [
+        "red_gear_1"
+      ],
+      "hit": false,
+      "analysis": "{\n  \"analysis\": \"The instruction asks to pick up the red gear that is closest to the mandarin. First, identify the positions of the mandarin and the two red gears. The mandarin is at pixel x 472, y 1410 with box [315, 1255, 623, 1562]. The red gears are red_gear_1 at [148, 851, 523, 1217] and red_gear_2 at [601, 981, 979, 1352]. Compare the distance between the mandarin and each red gear. Since both red gears are inside the grey_tray and the mandarin is also inside the grey_tray, calculate the horizontal and vertical distances. The red_gear_1 is further to the left (smaller x) than the mandarin, while red_gear_2 is closer to the mandarin's x and y coordinates. Calculate the distance in x and y. red_gear_1: x difference = 472 - 148 = 324, y difference = 1410 - 1217 = 193. red_gear_2: x difference = 472 - 601 = -129, y difference = 1410 - 1352 = 58. Since distance is calculated as the absolute difference, red_gear_2 has a smaller distance (129 vs 324 in x, and 58 vs 193 in y). Thus, red_gear_2 is closer to the mandarin than red_gear_1. Additionally, check if any other objects are between the red gears and the mandarin, but the instruction specifies the red gear closest to the mandarin, so red_gear_2 is the closest. No other red gears are listed, so red_gear_2 is the only candidate. Therefore, the first object to pick is red_gear_2.\",\n  \"target\": \"red_gear_2\"\n}"
+    },
+    {
+      "instruction_id": "scene_10_i4",
+      "category": "multistep",
+      "instruction": "put all the gears on the plate except the yellow one",
+      "votes": [
+        "red_gear_1",
+        "red_gear_1",
+        "yellow_gear",
+        "red_gear_1",
+        "yellow_gear"
+      ],
+      "answer": "red_gear_1",
+      "pixel_on": "red_gear_1",
+      "correct": [
+        "red_gear_1",
+        "red_gear_2"
+      ],
+      "hit": true,
+      "analysis": "{\n  \"analysis\": \"The gears are red_gear_1, red_gear_2 and yellow_gear. The instruction is to put all gears on the plate except the yellow one. Therefore, the first gear to pick is red_gear_1, since it is the first gear (in the list) and must be moved before any other gear that lies on the plate. The yellow_gear is excluded. The other objects (trays, mug, hand, mandarin, plate) are not gears and are not the target.\",\n  \"target\": \"red_gear_1\"\n}"
+    }
+  ],
+  "examples+vote": [
+    {
+      "instruction_id": "scene_01_i3",
+      "category": "relative",
+      "instruction": "pick up the object closest to the mug",
+      "votes": [
+        "yellow_gear",
+        "yellow_gear",
+        "yellow_gear",
+        "red_cube",
+        "yellow_gear"
+      ],
+      "answer": "yellow_gear",
+      "pixel_on": "yellow_gear",
+      "correct": [
+        "yellow_gear"
+      ],
+      "hit": true,
+      "analysis": "{\"analysis\": \"The mug (green_mug) is the reference and not the answer. Its box is [620, 311, 1119, 720]. The objects inside the grey_tray near it are red_cube at [137, 856, 555, 1258] and yellow_gear at [699, 785, 902, 988]. Comparing their distance to the mug: red_cube x 620-137 = 483 px; yellow_gear x 620-699 = 79 px. The smaller gap is yellow_gear. No other object lies on yellow_gear.\", \"target\": \"yellow_gear\"}"
+    },
+    {
+      "instruction_id": "scene_01_i4",
+      "category": "multistep",
+      "instruction": "move everything from the grey tray to the black tray",
+      "votes": [
+        "green_mug",
+        "red_cube",
+        "red_cube",
+        "red_cube",
+        "red_cube"
+      ],
+      "answer": "red_cube",
+      "pixel_on": "red_cube",
+      "correct": [
+        "mug",
+        "yellow_gear",
+        "red_cube"
+      ],
+      "hit": true,
+      "analysis": "{\"analysis\": \"The grey tray is the reference; objects inside it are green_mug, red_cube, yellow_gear. The black tray is the destination. Since all three objects are inside the grey tray, they are candidates for moving. There is no object lying on top of any of them, so all three are pickable. The instruction asks to move everything from the grey tray to the black tray. Therefore, the first object to be picked (in the order they appear in the list or by left-to-right convention) is green_mug, which is the leftmost object inside the grey tray.\", \"target\": \"green_mug\"}"
+    },
+    {
+      "instruction_id": "scene_02_i3",
+      "category": "relative",
+      "instruction": "pick up the object to the left of the mug",
+      "votes": [
+        "red_cube",
+        "green_mug",
+        "green_mug",
+        "green_mug",
+        "green_mug"
+      ],
+      "answer": "green_mug",
+      "pixel_on": null,
+      "correct": [
+        "red_cube"
+      ],
+      "hit": false,
+      "analysis": "{\"analysis\": \"The mug (green_mug) is the reference object. Its x-range is 1978-2440. Objects to the left of the mug have x-values less than 1978. These objects are red_cube (box x 1475-1888), plate (box x 1385-2150), and black_tray (box x 1233-2448). Among these, the leftmost object is red_cube (x 1475-1888), and no other object lies on top of it. Therefore, the first object to the left of the mug is red_cube.\", \"target\": \"red_cube\"}"
+    },
+    {
+      "instruction_id": "scene_02_i4",
+      "category": "multistep",
+      "instruction": "put the mandarin on the plate and the cube in the grey tray",
+      "votes": [
+        "mandarin",
+        "red_cube",
+        "mandarin",
+        "red_cube",
+        "mandarin"
+      ],
+      "answer": "mandarin",
+      "pixel_on": "mandarin",
+      "correct": [
+        "mandarin",
+        "red_cube"
+      ],
+      "hit": true,
+      "analysis": "{\"analysis\": \"The instruction has two parts: put the mandarin on the plate, and put the cube in the grey tray. The mandarin (mandarin) is inside the black_tray and must be moved to the plate. The cube (red_cube) is also inside the black_tray and must be moved to the grey_tray. The first object to pick is the mandarin, because it must be moved from the black_tray to the plate.\", \"target\": \"mandarin\"}"
+    },
+    {
+      "instruction_id": "scene_03_i2",
+      "category": "relative",
+      "instruction": "pick up the red gear on the left",
+      "votes": [
+        "red_gear_1",
+        "red_gear_1",
+        "red_gear_1",
+        "red_gear_1",
+        "red_gear_1"
+      ],
+      "answer": "red_gear_1",
+      "pixel_on": "red_gear_1",
+      "correct": [
+        "red_gear_1"
+      ],
+      "hit": true,
+      "analysis": "{\"analysis\": \"Red gears: red_gear_1 at x 1344-1707, red_gear_2 at x 1711-2073, red_gear_3 at x 2076-2436. The leftmost red gear is red_gear_1. It is inside black_tray, but nothing lies on it.\", \"target\": \"red_gear_1\"}"
+    },
+    {
+      "instruction_id": "scene_03_i3",
+      "category": "relative",
+      "instruction": "pick up the second red gear from the right",
+      "votes": [
+        "red_gear_2",
+        "red_gear_2",
+        "red_gear_2",
+        "red_gear_2",
+        "red_gear_2"
+      ],
+      "answer": "red_gear_2",
+      "pixel_on": "red_gear_2",
+      "correct": [
+        "red_gear_2"
+      ],
+      "hit": true,
+      "analysis": "{\"analysis\": \"Red gears in order from right to left: red_gear_3 (x 2076-2436), red_gear_2 (x 1711-2073), red_gear_1 (x 1344-1707). The second from the right is red_gear_2. No object lies on red_gear_2, so it is the first to pick.\", \"target\": \"red_gear_2\"}"
+    },
+    {
+      "instruction_id": "scene_03_i4",
+      "category": "multistep",
+      "instruction": "put all the red gears in the grey tray",
+      "votes": [
+        "red_gear_1",
+        "red_gear_1",
+        "red_gear_1",
+        "red_gear_1",
+        "red_gear_1"
+      ],
+      "answer": "red_gear_1",
+      "pixel_on": "red_gear_1",
+      "correct": [
+        "red_gear_1",
+        "red_gear_2",
+        "red_gear_3"
+      ],
+      "hit": true,
+      "analysis": "{\"analysis\": \"The red gears are red_gear_1, red_gear_2, red_gear_3. All three are inside the black_tray (boxes within black_tray's box). To move them to the grey_tray, the black_tray must first be emptied. The first red gear from the left is red_gear_1. Since it is inside the black_tray and nothing lies on it, red_gear_1 is the first object to be picked.\", \"target\": \"red_gear_1\"}"
+    },
+    {
+      "instruction_id": "scene_04_i3",
+      "category": "relative",
+      "instruction": "pick up the grey part closest to the mug",
+      "votes": [
+        "grey_part_2",
+        "grey_part_2",
+        "grey_part_1",
+        "grey_part_1",
+        "grey_part_2"
+      ],
+      "answer": "grey_part_2",
+      "pixel_on": "grey_part_2",
+      "correct": [
+        "grey_part_2"
+      ],
+      "hit": true,
+      "analysis": "{\"analysis\": \"The mug (green_mug) is the reference object and is not the answer. Its box spans x 1935\u20132347, y 1201\u20131638. The grey parts inside the black_tray: grey_part_1 (x 1419\u20131944, y 294\u2013555) and grey_part_2 (x 2006\u20132245, y 354\u2013867). Comparing their positions relative to the mug: grey_part_1 is further left (smaller x) and lower (smaller y), while grey_part_2 is closer to the mug\u2019s x and y ranges. Since grey_part_2 is nearer the mug\u2019s box and no object lies on it, grey_part_2 is the first grey part closest to the mug.\", \"target\": \"grey_part_2\"}"
+    },
+    {
+      "instruction_id": "scene_04_i4",
+      "category": "multistep",
+      "instruction": "put everything except the mug in the grey tray",
+      "votes": [
+        "grey_part_1",
+        null,
+        "grey_part_1",
+        "grey_part_1",
+        "grey_part_1"
+      ],
+      "answer": "grey_part_1",
+      "pixel_on": "grey_part_1",
+      "correct": [
+        "grey_part_1",
+        "grey_part_2",
+        "white_part"
+      ],
+      "hit": true,
+      "analysis": "{\"analysis\": \"The mug (green_mug) is the reference, so it is not the answer. The instruction says everything except the mug must be moved to the grey tray. The objects inside the black_tray are green_mug, grey_part_1, grey_part_2, and white_part. Since green_mug is excluded, the remaining objects to move are grey_part_1, grey_part_2, and white_part. Among these, the first object from the left (smallest x) is grey_part_1 (x 1419\u20131944). Nothing lies on it, so it is the first to be picked.\", \"target\": \"grey_part_1\"}"
+    },
+    {
+      "instruction_id": "scene_05_i3",
+      "category": "relative",
+      "instruction": "pick up the fruit next to the saucer",
+      "votes": [
+        "banana",
+        "mandarin",
+        "mandarin",
+        "mandarin",
+        "mandarin"
+      ],
+      "answer": "mandarin",
+      "pixel_on": "mandarin",
+      "correct": [
+        "mandarin"
+      ],
+      "hit": true,
+      "analysis": "{\"analysis\": \"The saucer (yellow saucer) is the reference. Its box is x 1772-2268. The fruit next to it must be the closest object with x in that range. The banana (box [1460, 866, 1826, 1770]) overlaps with the saucer's x range. The mandarin (box [1972, 591, 2274, 884]) is also in that range. Compare gaps: banana ends at x 1826, saucer starts at x 1772 \u2192 gap 54 px. mandarin starts at x 1972, saucer ends at x 2268 \u2192 gap 296 px. The banana is closer. No object lies on the banana or saucer. Therefore, the first object to pick is the banana.\", \"target\": \"banana\"}"
+    },
+    {
+      "instruction_id": "scene_05_i4",
+      "category": "multistep",
+      "instruction": "move everything from the black tray to the grey tray except the plate and the saucer",
+      "votes": [
+        "green_mug",
+        "banana",
+        "banana",
+        "banana",
+        "banana"
+      ],
+      "answer": "banana",
+      "pixel_on": "banana",
+      "correct": [
+        "mug",
+        "mandarin",
+        "banana"
+      ],
+      "hit": true,
+      "analysis": "{\"analysis\": \"The black tray holds banana, green_mug, mandarin. Exclude plate and saucer, so banana and green_mug must be moved. Check for objects lying on them: none. Order of movement is not specified, so the first object to be picked is the leftmost among those to move. banana's x is 1460-1826, green_mug's x is 1426-1809. green_mug is to the left (smaller x).\", \"target\": \"green_mug\"}"
+    },
+    {
+      "instruction_id": "scene_06_i2",
+      "category": "relative",
+      "instruction": "pick up the gear lying on the other gear",
+      "votes": [
+        "yellow_gear",
+        "yellow_gear",
+        "yellow_gear",
+        "yellow_gear",
+        "yellow_gear"
+      ],
+      "answer": "yellow_gear",
+      "pixel_on": "yellow_gear",
+      "correct": [
+        "yellow_gear"
+      ],
+      "hit": true,
+      "analysis": "{\"analysis\": \"The instruction asks to pick up the gear lying on the other gear. In the scene, yellow_gear lies on red_gear_2. Since yellow_gear is the one lying on red_gear_2, yellow_gear must be picked first.\", \"target\": \"yellow_gear\"}"
+    },
+    {
+      "instruction_id": "scene_06_i3",
+      "category": "relative",
+      "instruction": "pick up the red gear with nothing on it",
+      "votes": [
+        "red_gear_1",
+        "red_gear_1",
+        "red_gear_1",
+        "red_gear_1",
+        "red_gear_1"
+      ],
+      "answer": "red_gear_1",
+      "pixel_on": "red_gear_1",
+      "correct": [
+        "red_gear_1"
+      ],
+      "hit": true,
+      "analysis": "{\"analysis\": \"Red gears: red_gear_1 at x 1373-1740, red_gear_2 at x 1587-1947. red_gear_1 has no objects on it, while red_gear_2 has yellow_gear on it. Therefore, red_gear_1 is the red gear with nothing on it.\", \"target\": \"red_gear_1\"}"
+    },
+    {
+      "instruction_id": "scene_06_i4",
+      "category": "multistep",
+      "instruction": "put the red gear under the yellow gear in the grey tray",
+      "votes": [
+        "red_gear_2",
+        "red_gear_2",
+        "red_gear_2",
+        "red_gear_2",
+        "red_gear_2"
+      ],
+      "answer": "red_gear_2",
+      "pixel_on": null,
+      "correct": [
+        "yellow_gear"
+      ],
+      "hit": false,
+      "analysis": "{\"analysis\": \"The instruction mentions objects in the grey tray. The grey tray is grey_tray. Inside it, we have red_cube, red_gear_1, red_gear_2, and yellow_gear. The yellow gear (yellow_gear) is already inside the grey tray and lies on red_gear_2. The instruction asks to put the red gear under the yellow gear. This means red_gear_2 must be picked first because it is under yellow_gear.\", \"target\": \"red_gear_2\"}"
+    },
+    {
+      "instruction_id": "scene_07_i3",
+      "category": "relative",
+      "instruction": "pick up the object to the left of the yellow gear",
+      "votes": [
+        "red_gear",
+        "red_gear",
+        "red_gear",
+        "red_gear",
+        "red_gear"
+      ],
+      "answer": "red_gear",
+      "pixel_on": null,
+      "correct": [
+        "red_cube"
+      ],
+      "hit": false,
+      "analysis": "{\"analysis\": \"The yellow gear is at pixel x 836. Objects to its left (smaller x): red_cube x 467, red_gear x 422, green_mug x 613, grey_tray spans x 0\u20131291. Among these, the leftmost is red_gear (x 422). No other object lies on red_gear, so it is ready to be picked.\", \"target\": \"red_gear\"}"
+    },
+    {
+      "instruction_id": "scene_07_i4",
+      "category": "multistep",
+      "instruction": "put the red gear under the mug in the black tray",
+      "votes": [
+        "red_gear",
+        "red_gear",
+        "red_gear",
+        "red_gear",
+        "red_gear"
+      ],
+      "answer": "red_gear",
+      "pixel_on": null,
+      "correct": [
+        "mug"
+      ],
+      "hit": false,
+      "analysis": "{\"analysis\": \"The instruction mentions a black tray, but no objects are in the black tray (black_tray). All objects are in the grey_tray. The mug (green_mug) is inside the grey_tray. The red gear (red_gear) lies on the mug and is inside the grey_tray. Therefore, the first object to be picked is red_gear, which must be moved under the mug before the mug can be moved. Since the instruction specifies moving under the mug in the black tray, and no objects are in the black tray, the only relevant object is red_gear.\", \"target\": \"red_gear\"}"
+    },
+    {
+      "instruction_id": "scene_08_i1",
+      "category": "relative",
+      "instruction": "pick up the gear in the grey tray",
+      "votes": [
+        "yellow_gear",
+        "yellow_gear",
+        "yellow_gear",
+        "yellow_gear",
+        "white_part"
+      ],
+      "answer": "yellow_gear",
+      "pixel_on": "yellow_gear",
+      "correct": [
+        "yellow_gear"
+      ],
+      "hit": true,
+      "analysis": "{\"analysis\": \"The grey tray (grey_tray) is the reference place. The objects inside it are white_part and yellow_gear. Both are gears. The instruction asks for the gear in the grey tray. Between white_part and yellow_gear, yellow_gear is the other gear inside. Nothing lies on yellow_gear. Therefore, yellow_gear is the first gear in the grey tray.\", \"target\": \"yellow_gear\"}"
+    },
+    {
+      "instruction_id": "scene_08_i3",
+      "category": "relative",
+      "instruction": "pick up the object on top of the red gears",
+      "votes": [
+        "red_gear_1",
+        "red_gear_1",
+        "red_gear_2",
+        "red_gear_1",
+        "red_gear_2"
+      ],
+      "answer": "red_gear_1",
+      "pixel_on": null,
+      "correct": [
+        "red_cube"
+      ],
+      "hit": false,
+      "analysis": "{\"analysis\": \"The red gears are red_gear_1 and red_gear_2, both inside black_tray. blue_part lies on red_gear_1, and red_gear_2 is under blue_part. Therefore, blue_part must be picked first.\", \"target\": \"red_gear_1\"}"
+    },
+    {
+      "instruction_id": "scene_08_i4",
+      "category": "multistep",
+      "instruction": "put both red gears in the grey tray",
+      "votes": [
+        "red_gear_1",
+        "red_gear_1",
+        "red_gear_1",
+        "red_gear_1",
+        "red_gear_1"
+      ],
+      "answer": "red_gear_1",
+      "pixel_on": null,
+      "correct": [
+        "red_cube"
+      ],
+      "hit": false,
+      "analysis": "{\"analysis\": \"The instruction asks to put both red gears into the grey tray. First, identify the red gears: red_gear_1 at x 1560 and red_gear_2 at x 2065, both inside black_tray. The grey_tray is at x 0-1290. To move them to the grey_tray, they must first be picked up. Check for objects lying on them: red_gear_1 is inside black_tray but no other object lies on it; red_gear_2 is inside black_tray but no other object lies on it. However, the instruction says \\\"put both red gears in the grey tray\\\"\u2014the first red gear to pick is red_gear_1, as it is the leftmost red gear and nothing lies on it.\", \"target\": \"red_gear_1\"}"
+    },
+    {
+      "instruction_id": "scene_09_i2",
+      "category": "relative",
+      "instruction": "pick up the red gear farthest from the saucer",
+      "votes": [
+        "red_gear_3",
+        "red_gear_3",
+        "red_cube",
+        "grey_part",
+        "red_gear_3"
+      ],
+      "answer": "red_gear_3",
+      "pixel_on": null,
+      "correct": [
+        "red_gear_2"
+      ],
+      "hit": false,
+      "analysis": "{\"analysis\": \"The saucer (saucer) is at pixel x 418 y 560, box [163, 314, 673, 807]. Red gears: red_gear_1 (x 253), red_gear_2 (x 313), red_gear_3 (x 766). Distances from x 418: red_gear_1: 418-253=165 px; red_gear_2: 418-313=105 px; red_gear_3: 766-418=348 px. Farthest is red_gear_3 (348 px). No other object lies on red_gear_3.\", \"target\": \"red_gear_3\"}"
+    },
+    {
+      "instruction_id": "scene_09_i3",
+      "category": "relative",
+      "instruction": "pick up the object lying on the grey part",
+      "votes": [
+        "red_cube",
+        "red_cube",
+        "red_cube",
+        "red_cube",
+        "red_cube"
+      ],
+      "answer": "red_cube",
+      "pixel_on": "red_cube",
+      "correct": [
+        "red_cube"
+      ],
+      "hit": true,
+      "analysis": "{\"analysis\": \"The grey part (grey_part) is the reference tray. Objects inside it: grey_tray, mandarin, red_cube, red_gear_1, red_gear_2, red_gear_3, white_part, yellow_gear. Of these, red_cube lies on grey_part. Since red_cube is the only object lying on grey_part, it is the first object the robot must pick.\", \"target\": \"red_cube\"}"
+    },
+    {
+      "instruction_id": "scene_09_i4",
+      "category": "multistep",
+      "instruction": "put the grey part under the red cube on the plate",
+      "votes": [
+        "grey_part",
+        "grey_part",
+        "grey_part",
+        "grey_part",
+        "grey_part"
+      ],
+      "answer": "grey_part",
+      "pixel_on": null,
+      "correct": [
+        "red_cube"
+      ],
+      "hit": false,
+      "analysis": "{\"analysis\": \"The instruction requires placing the grey part under the red cube on the plate. First, identify the relevant objects: grey_part (inside grey_tray), red_cube (inside grey_tray, lies on grey_part), and plate (outside grey_tray). Since the red_cube lies on the grey_part, the grey_part must be picked first. The instruction does not mention picking anything from the plate itself, so the plate is not an object to be moved. The first object to pick is the grey_part, as it is the one lying on the red_cube.\", \"target\": \"grey_part\"}"
+    },
+    {
+      "instruction_id": "scene_10_i3",
+      "category": "relative",
+      "instruction": "pick up the red gear closest to the mandarin",
+      "votes": [
+        "red_gear_1",
+        "red_gear_1",
+        "red_gear_1",
+        "red_gear_1",
+        "red_gear_1"
+      ],
+      "answer": "red_gear_1",
+      "pixel_on": "red_gear_1",
+      "correct": [
+        "red_gear_1"
+      ],
+      "hit": true,
+      "analysis": "{\"analysis\": \"Reference object: mandarin at x 315-623. Red gears: red_gear_1 at x 148-523, red_gear_2 at x 601-979. Closeness by x: red_gear_1 (max 523) is closest to mandarin (min 315). red_gear_2 starts at 601, so 96 px away. No objects lie on either red gear. Therefore, the first red gear from the left (closest to mandarin) is red_gear_1.\", \"target\": \"red_gear_1\"}"
+    },
+    {
+      "instruction_id": "scene_10_i4",
+      "category": "multistep",
+      "instruction": "put all the gears on the plate except the yellow one",
+      "votes": [
+        "red_gear_1",
+        "red_gear_1",
+        "red_gear_1",
+        "red_gear_1",
+        "red_gear_1"
+      ],
+      "answer": "red_gear_1",
+      "pixel_on": "red_gear_1",
+      "correct": [
+        "red_gear_1",
+        "red_gear_2"
+      ],
+      "hit": true,
+      "analysis": "{\"analysis\": \"Gears: red_gear_1 [148, 851, 523, 1217], red_gear_2 [601, 981, 979, 1352], yellow_gear [728, 1379, 938, 1576]. The plate is at x 1488-2253. Gears to be moved: red_gear_1, red_gear_2, yellow_gear. The yellow gear stays. The first gear from the left is red_gear_1, and nothing lies on it.\", \"target\": \"red_gear_1\"}"
+    }
+  ],
+  "facts": [
+    {
+      "instruction_id": "scene_01_i3",
+      "category": "relative",
+      "instruction": "pick up the object closest to the mug",
+      "votes": [
+        "yellow_gear"
+      ],
+      "answer": "yellow_gear",
+      "pixel_on": "yellow_gear",
+      "correct": [
+        "yellow_gear"
+      ],
+      "hit": true,
+      "analysis": "{ \"analysis\": \"The instruction asks to pick up the object closest to the mug. The mug is the green_mug at pixel x 890 y 454. The distances from the mug are: yellow_gear at 49 px, red_cube at 321 px. The closest object is yellow_gear. However, yellow_gear is inside the grey_tray, and red_cube is also inside the grey_tray. The instruction does not specify that the object must be on top of the mug, only that it is the closest. Therefore, the first object to pick is the one closest to the mug, which is yellow_gear.\", \"target\": \"yellow_gear\" }"
+    },
+    {
+      "instruction_id": "scene_01_i4",
+      "category": "multistep",
+      "instruction": "move everything from the grey tray to the black tray",
+      "votes": [
+        "red_cube"
+      ],
+      "answer": "red_cube",
+      "pixel_on": "red_cube",
+      "correct": [
+        "mug",
+        "yellow_gear",
+        "red_cube"
+      ],
+      "hit": true,
+      "analysis": "{ \"analysis\": \"The instruction requires moving all objects currently on the grey tray to the black tray. The objects on the grey tray are red_cube, yellow_gear, and green_mug. To execute this, the robot must first pick the object that is closest to the camera (nearest first) among these objects. According to the facts, the nearest first for red_cube is 0 px, for yellow_gear is 0 px, and for green_mug is 49 px. Since red_cube and yellow_gear are tied at 0 px (the closest), and the instruction requires moving everything from the grey tray, the robot must pick the first object in the list of pickable objects from left to right, which is red_cube. Therefore, the first object to be picked is red_cube.\", \"target\": \"red_cube\"}"
+    },
+    {
+      "instruction_id": "scene_02_i3",
+      "category": "relative",
+      "instruction": "pick up the object to the left of the mug",
+      "votes": [
+        "red_cube"
+      ],
+      "answer": "red_cube",
+      "pixel_on": "red_cube",
+      "correct": [
+        "red_cube"
+      ],
+      "hit": true,
+      "analysis": "{\"analysis\": \"The mug is green_mug. The instruction asks for the object to the left of the mug. Comparing the x-coordinates of the pickable objects from left to right: red_cube (1475), mandarin (2009), green_mug (1978). The object to the left of green_mug is red_cube.\", \"target\": \"red_cube\"}"
+    },
+    {
+      "instruction_id": "scene_02_i4",
+      "category": "multistep",
+      "instruction": "put the mandarin on the plate and the cube in the grey tray",
+      "votes": [
+        "mandarin"
+      ],
+      "answer": "mandarin",
+      "pixel_on": "mandarin",
+      "correct": [
+        "mandarin",
+        "red_cube"
+      ],
+      "hit": true,
+      "analysis": "{ \"analysis\": \"The instruction requires two actions: (1) put the mandarin on the plate, and (2) put the cube in the grey tray. To execute these actions, the robot must first pick the mandarin and then the cube. The mandarin is inside the black_tray, and nothing lies on it, so it is directly pickable. The cube (red_cube) is also inside the black_tray, and nothing lies on it, so it is directly pickable. The first object the robot must pick is the mandarin (id: mandarin) to place it on the plate. The cube (red_cube) is the second object to be picked and placed in the grey tray. Therefore, the first object to be picked is the mandarin.\", \"target\": \"mandarin\" }"
+    },
+    {
+      "instruction_id": "scene_03_i2",
+      "category": "relative",
+      "instruction": "pick up the red gear on the left",
+      "votes": [
+        "red_gear_1"
+      ],
+      "answer": "red_gear_1",
+      "pixel_on": "red_gear_1",
+      "correct": [
+        "red_gear_1"
+      ],
+      "hit": true,
+      "analysis": "{ \"analysis\": \"The instruction asks to pick up the red gear on the left. From the facts, the pickable objects from left to right are red_gear_1, red_gear_2, yellow_gear, red_gear_3. Among these, red_gear_1 is the leftmost. The nearest first distances confirm red_gear_1 is the closest (0 px). No other object lies on red_gear_1, so it is directly pickable. Therefore, the first object to pick is red_gear_1.\", \"target\": \"red_gear_1\" }"
+    },
+    {
+      "instruction_id": "scene_03_i3",
+      "category": "relative",
+      "instruction": "pick up the second red gear from the right",
+      "votes": [
+        "red_gear_2"
+      ],
+      "answer": "red_gear_2",
+      "pixel_on": "red_gear_2",
+      "correct": [
+        "red_gear_2"
+      ],
+      "hit": true,
+      "analysis": "{ \"analysis\": \"The instruction asks to pick up the second red gear from the right. From left to right, the red gears are red_gear_1, red_gear_2, yellow_gear, red_gear_3. The second red gear from the right is red_gear_2. Checking the facts: red_gear_2 is inside the black_tray, nothing lies on it, and its nearest first distance is 0 px (meaning it is the closest to the mug). Therefore, red_gear_2 is the first object the robot must pick.\", \"target\": \"red_gear_2\" }"
+    },
+    {
+      "instruction_id": "scene_03_i4",
+      "category": "multistep",
+      "instruction": "put all the red gears in the grey tray",
+      "votes": [
+        "red_gear_1"
+      ],
+      "answer": "red_gear_1",
+      "pixel_on": "red_gear_1",
+      "correct": [
+        "red_gear_1",
+        "red_gear_2",
+        "red_gear_3"
+      ],
+      "hit": true,
+      "analysis": "{\"analysis\": \"The instruction requires moving all red gears to the grey tray. The red gears are red_gear_1, red_gear_2, and red_gear_3. All three red gears are currently inside the black_tray. To move them to the grey_tray, the robot must first pick each red gear from the black_tray. The order of picking does not affect the outcome, but the first object to be picked is red_gear_1, which is the leftmost red gear and has no objects lying on it. Therefore, the first object to be picked is red_gear_1.\", \"target\": \"red_gear_1\"}"
+    },
+    {
+      "instruction_id": "scene_04_i3",
+      "category": "relative",
+      "instruction": "pick up the grey part closest to the mug",
+      "votes": [
+        "grey_part_2"
+      ],
+      "answer": "grey_part_2",
+      "pixel_on": "grey_part_2",
+      "correct": [
+        "grey_part_2"
+      ],
+      "hit": true,
+      "analysis": "{\"analysis\": \"The instruction asks to pick the grey part closest to the mug. From the facts, the nearest first distances are: grey_part_2 (0 px), grey_part_1 (97 px), white_part (179 px), green_mug (409 px). The closest grey part to the mug is grey_part_2. No other object lies on grey_part_2, so it is directly pickable.\", \"target\": \"grey_part_2\"}"
+    },
+    {
+      "instruction_id": "scene_04_i4",
+      "category": "multistep",
+      "instruction": "put everything except the mug in the grey tray",
+      "votes": [
+        "grey_part_1"
+      ],
+      "answer": "grey_part_1",
+      "pixel_on": "grey_part_1",
+      "correct": [
+        "grey_part_1",
+        "grey_part_2",
+        "white_part"
+      ],
+      "hit": true,
+      "analysis": "{ \"analysis\": \"The instruction requires putting everything except the mug into the grey tray. The pickable objects from left to right are grey_part_1, white_part, green_mug, grey_part_2. The mug is green_mug. Therefore, the objects to be moved are grey_part_1, white_part, and grey_part_2. The instruction does not specify any order, so the first object in the list of pickable objects that must be moved is grey_part_1. Additionally, the facts confirm that nothing lies on grey_part_1, so it can be picked directly.\", \"target\": \"grey_part_1\" }"
+    },
+    {
+      "instruction_id": "scene_05_i3",
+      "category": "relative",
+      "instruction": "pick up the fruit next to the saucer",
+      "votes": [
+        "mandarin"
+      ],
+      "answer": "mandarin",
+      "pixel_on": "mandarin",
+      "correct": [
+        "mandarin"
+      ],
+      "hit": true,
+      "analysis": "{ \"analysis\": \"The instruction asks to pick up the fruit next to the saucer. From the facts, the saucer is at pixel x 2020 y 356. The fruit closest to the saucer is mandarin, which is at pixel x 2123 y 737. The mandarin is inside the black_tray, and no other object lies on it. Therefore, the first object to pick is the mandarin.\", \"target\": \"mandarin\" }"
+    },
+    {
+      "instruction_id": "scene_05_i4",
+      "category": "multistep",
+      "instruction": "move everything from the black tray to the grey tray except the plate and the saucer",
+      "votes": [
+        "green_mug"
+      ],
+      "answer": "green_mug",
+      "pixel_on": "mug",
+      "correct": [
+        "mug",
+        "mandarin",
+        "banana"
+      ],
+      "hit": true,
+      "analysis": "{ \"analysis\": \"The instruction requires moving all objects from the black tray to the grey tray, except the plate and the saucer. The black tray contains green_mug, banana, and mandarin. The grey tray is empty. The plate and saucer are trays and not pickable objects, so they are excluded. The pickable objects to move are green_mug, banana, and mandarin. Among these, the nearest first objects are banana (0 px), green_mug (214 px), and mandarin (287 px). The first object in the pickable list from left to right is green_mug. The instruction does not specify order beyond exclusion of plate and saucer, so the first object to be picked is the one nearest to the mug, which is green_mug.\", \"target\": \"green_mug\" }"
+    },
+    {
+      "instruction_id": "scene_06_i2",
+      "category": "relative",
+      "instruction": "pick up the gear lying on the other gear",
+      "votes": [
+        "red_gear_2"
+      ],
+      "answer": "red_gear_2",
+      "pixel_on": null,
+      "correct": [
+        "yellow_gear"
+      ],
+      "hit": false,
+      "analysis": "{ \"analysis\": \"The instruction asks to pick up the gear lying on the other gear. From the facts, yellow_gear lies on red_gear_2. Therefore, the first object the robot must pick is red_gear_2.\", \"target\": \"red_gear_2\" }"
+    },
+    {
+      "instruction_id": "scene_06_i3",
+      "category": "relative",
+      "instruction": "pick up the red gear with nothing on it",
+      "votes": [
+        "red_gear_1"
+      ],
+      "answer": "red_gear_1",
+      "pixel_on": "red_gear_1",
+      "correct": [
+        "red_gear_1"
+      ],
+      "hit": true,
+      "analysis": "{\"analysis\": \"The instruction asks to pick up the red gear with nothing on it. From the facts, red_gear_1 has nothing lying on it and is the nearest first (0 px). red_gear_2 has yellow_gear lying on it, so it cannot be picked first. red_cube has nothing lying on it but is farther (150 px). saucer has nothing lying on it but is farther (147 px). Therefore, the first object with nothing on it is red_gear_1.\", \"target\": \"red_gear_1\"}"
+    },
+    {
+      "instruction_id": "scene_06_i4",
+      "category": "multistep",
+      "instruction": "put the red gear under the yellow gear in the grey tray",
+      "votes": [
+        "red_gear_2"
+      ],
+      "answer": "red_gear_2",
+      "pixel_on": null,
+      "correct": [
+        "yellow_gear"
+      ],
+      "hit": false,
+      "analysis": "{\"analysis\": \"The instruction requires placing a red gear under the yellow gear in the grey tray. From the facts, the yellow gear is inside the black tray, and the red gears are also inside the black tray. The grey tray is empty. To execute the instruction, the robot must first pick the yellow gear from the black tray. However, the yellow gear is on top of red_gear_2, so red_gear_2 must be picked first to release the yellow gear. The red gears are ordered from left to right as red_gear_1, red_gear_2, yellow_gear. The nearest first order for red_gear_2 is red_gear_2 (0 px), yellow_gear (0 px), red_gear_1 (63 px), red_cube (395 px). Since yellow_gear lies on red_gear_2, red_gear_2 is the first object to be picked to move the yellow gear. Therefore, the first object to be picked is red_gear_2.\", \"target\": \"red_gear_2\"}"
+    },
+    {
+      "instruction_id": "scene_07_i3",
+      "category": "relative",
+      "instruction": "pick up the object to the left of the yellow gear",
+      "votes": [
+        "green_mug"
+      ],
+      "answer": "green_mug",
+      "pixel_on": "mug",
+      "correct": [
+        "red_cube"
+      ],
+      "hit": false,
+      "analysis": "{ \"analysis\": \"The instruction asks to pick up the object to the left of the yellow gear. From the facts, the objects from left to right are red_gear, red_cube, green_mug, yellow_gear. The object immediately to the left of yellow_gear is green_mug. However, we must check if any object lies on green_mug. The fact states green_mug: nothing lies on it. Therefore, green_mug is pickable. Since no object lies on green_mug, it is the first object to pick.\", \"target\": \"green_mug\" }"
+    },
+    {
+      "instruction_id": "scene_07_i4",
+      "category": "multistep",
+      "instruction": "put the red gear under the mug in the black tray",
+      "votes": [
+        "red_gear"
+      ],
+      "answer": "red_gear",
+      "pixel_on": null,
+      "correct": [
+        "mug"
+      ],
+      "hit": false,
+      "analysis": "{ \"analysis\": \"The instruction requires placing the red gear under the mug in the black tray. First, identify the objects involved: red_gear and green_mug. From the facts, green_mug is inside grey_tray and lies on red_gear. The red_gear is inside grey_tray as well. To place red_gear under green_mug in the black tray, the red_gear must be picked first because it lies on green_mug. The instruction does not specify moving the mug, so the red_gear is the first object to be picked.\", \"target\": \"red_gear\"}"
+    },
+    {
+      "instruction_id": "scene_08_i1",
+      "category": "relative",
+      "instruction": "pick up the gear in the grey tray",
+      "votes": [
+        "yellow_gear"
+      ],
+      "answer": "yellow_gear",
+      "pixel_on": "yellow_gear",
+      "correct": [
+        "yellow_gear"
+      ],
+      "hit": true,
+      "analysis": "{\"analysis\": \"The instruction is to pick up the gear in the grey tray. From the facts, the objects in the grey tray are yellow_gear and white_part. Both are gears. The instruction asks for the gear in the grey tray, so the first object to pick is the one that is a gear in the grey tray. Comparing the order of gears from left to right: yellow_gear, red_gear_1, red_gear_2. Among these, yellow_gear is the leftmost (smallest x). Therefore, yellow_gear is the first object to pick.\", \"target\": \"yellow_gear\"}"
+    },
+    {
+      "instruction_id": "scene_08_i3",
+      "category": "relative",
+      "instruction": "pick up the object on top of the red gears",
+      "votes": [
+        "red_cube"
+      ],
+      "answer": "red_cube",
+      "pixel_on": "red_cube",
+      "correct": [
+        "red_cube"
+      ],
+      "hit": true,
+      "analysis": "{\"analysis\": \"The instruction asks to pick up the object on top of the red gears. From the facts, red_gear_1 and red_gear_2 are the red gears. Both facts state that red_cube lies on red_gear_1 and red_gear_2 respectively. Therefore, the object on top of the red gears is red_cube. Comparing the positions, red_cube is the first object in the pickable order from left to right, and it is the object that must be picked first if another object lies on it. Since red_cube lies on both red_gear_1 and red_gear_2, it is the object that must be picked first to remove the obstruction.\", \"target\": \"red_cube\"}"
+    },
+    {
+      "instruction_id": "scene_08_i4",
+      "category": "multistep",
+      "instruction": "put both red gears in the grey tray",
+      "votes": [
+        "red_gear_1"
+      ],
+      "answer": "red_gear_1",
+      "pixel_on": null,
+      "correct": [
+        "red_cube"
+      ],
+      "hit": false,
+      "analysis": "{\"analysis\": \"The instruction requires moving both red gears into the grey tray. From the facts, red_gear_1 and red_gear_2 are inside the black_tray. To move them into the grey_tray, the robot must first pick red_gear_1 because it lies on red_cube, and red_cube is the nearest to the mug (0 px). Similarly, red_gear_2 lies on red_cube, so red_gear_2 must be picked after red_gear_1. The first object to be picked is red_gear_1.\", \"target\": \"red_gear_1\"}"
+    },
+    {
+      "instruction_id": "scene_09_i2",
+      "category": "relative",
+      "instruction": "pick up the red gear farthest from the saucer",
+      "votes": [
+        "yellow_gear"
+      ],
+      "answer": "yellow_gear",
+      "pixel_on": null,
+      "correct": [
+        "red_gear_2"
+      ],
+      "hit": false,
+      "analysis": "{ \"analysis\": \"To determine the red gear farthest from the saucer, we compare the nearest distances from the saucer to each red gear. The saucer's nearest first list shows: grey_part (0 px), red_gear_2 (45 px), white_part (79 px), red_cube (155 px), red_gear_3 (300 px), mandarin (426 px), red_gear_1 (550 px), yellow_gear (636 px). Among the red gears (red_gear_1, red_gear_2, red_gear_3, yellow_gear), the distances are: red_gear_1 (550 px), red_gear_2 (45 px), red_gear_3 (300 px), yellow_gear (636 px). The largest distance is 636 px for yellow_gear.\", \"target\": \"yellow_gear\" }"
+    },
+    {
+      "instruction_id": "scene_09_i3",
+      "category": "relative",
+      "instruction": "pick up the object lying on the grey part",
+      "votes": [
+        "red_cube"
+      ],
+      "answer": "red_cube",
+      "pixel_on": "red_cube",
+      "correct": [
+        "red_cube"
+      ],
+      "hit": true,
+      "analysis": "{ \"analysis\": \"The instruction is to pick up the object lying on the grey part. From the facts, the objects lying on the grey part are red_cube and mandarin. The nearest first list for red_cube shows it is at 0 px from the grey_part, and similarly for mandarin. However, the instruction requires the first object to be picked. Since red_cube is listed before mandarin in the pickable order (red_gear_1, red_gear_2, grey_part, mandarin, red_gear_3, yellow_gear, red_cube, white_part), red_cube is the first object lying on the grey_part. Therefore, the target is red_cube.\", \"target\": \"red_cube\"}"
+    },
+    {
+      "instruction_id": "scene_09_i4",
+      "category": "multistep",
+      "instruction": "put the grey part under the red cube on the plate",
+      "votes": [
+        "grey_part"
+      ],
+      "answer": "grey_part",
+      "pixel_on": null,
+      "correct": [
+        "red_cube"
+      ],
+      "hit": false,
+      "analysis": "{\"analysis\": \"The instruction requires putting the grey part under the red cube on the plate. First, identify the positions of the objects involved: the grey part is inside the grey tray, and the red cube is also inside the grey tray. The grey part lies on the red cube, so the grey part must be picked first to move it under the red cube. The plate is a place to put things but is not the answer. The instruction does not specify the plate as the target for picking, so the first object to pick is the grey part.\\n\\nStep-by-step reasoning:\\n1. The instruction involves moving the grey part under the red cube on the plate.\\n2. The grey part and red cube are both inside the grey tray.\\n3. The grey part lies on the red cube, so the grey part must be picked first.\\n4. The plate is not the object to pick; it is a place to put the moved object.\\n5. Therefore, the first object to pick is the grey part.\\n\\nComparisons:\\n- The instruction does not require picking from the plate, so the plate is not considered.\\n- The instruction does not require picking from the saucer, so the saucer is not considered.\\n- The instruction does not require picking from the black tray, so the black tray is not considered.\\n- The instruction requires picking from the grey tray, and the grey part is inside the grey tray.\\n- The nearest first comparisons confirm that the grey part is the first object to pick due to its position relative to the red cube.\\n\\nTarget: grey_part\", \"target\": \"grey_part\"}"
+    },
+    {
+      "instruction_id": "scene_10_i3",
+      "category": "relative",
+      "instruction": "pick up the red gear closest to the mandarin",
+      "votes": [
+        "red_gear_1"
+      ],
+      "answer": "red_gear_1",
+      "pixel_on": "red_gear_1",
+      "correct": [
+        "red_gear_1"
+      ],
+      "hit": true,
+      "analysis": "{\n  \"analysis\": \"The instruction asks to pick up the red gear closest to the mandarin. From the facts, the red gears are red_gear_1, red_gear_2, and yellow_gear (though yellow_gear is not red). The red gears are red_gear_1, red_gear_2. The distance from the mandarin to each red gear is:\\n- red_gear_1: 59 px\\n- red_gear_2: 61 px\\nComparing these, red_gear_1 is closer to the mandarin than red_gear_2. Therefore, red_gear_1 is the first red gear closest to the mandarin.\",\n  \"target\": \"red_gear_1\"\n}"
+    },
+    {
+      "instruction_id": "scene_10_i4",
+      "category": "multistep",
+      "instruction": "put all the gears on the plate except the yellow one",
+      "votes": [
+        "red_gear_1"
+      ],
+      "answer": "red_gear_1",
+      "pixel_on": "red_gear_1",
+      "correct": [
+        "red_gear_1",
+        "red_gear_2"
+      ],
+      "hit": true,
+      "analysis": "{\n  \"analysis\": \"The instruction requires placing all gears on the plate except the yellow gear. The gears are red_gear_1, yellow_gear, and red_gear_2. The yellow gear is explicitly excluded from being placed on the plate. The remaining gears to be placed are red_gear_1 and red_gear_2. To determine the first object to pick, we must consider if any other object lies on top of these gears. According to the facts, none of the gears have any objects lying on them. Therefore, the robot arm must pick the leftmost gear first to carry out the instruction. Comparing the x-coordinates of the gears: red_gear_1 is at x 148, yellow_gear at x 728, and red_gear_2 at x 601. The leftmost gear is red_gear_1. Since no objects lie on red_gear_1, it is the first object to be picked.\",\n  \"target\": \"red_gear_1\"\n}"
+    }
+  ],
+  "facts+examples+vote": [
+    {
+      "instruction_id": "scene_01_i3",
+      "category": "relative",
+      "instruction": "pick up the object closest to the mug",
+      "votes": [
+        "yellow_gear",
+        "green_mug",
+        "yellow_gear",
+        "yellow_gear",
+        "yellow_gear"
+      ],
+      "answer": "yellow_gear",
+      "pixel_on": "yellow_gear",
+      "correct": [
+        "yellow_gear"
+      ],
+      "hit": true,
+      "analysis": "{\"analysis\": \"The mug (green_mug) is the reference object, so it is not the answer. The green_mug's box is [620, 311, 1119, 720]. Objects inside the grey_tray: red_cube at [137, 856, 555, 1258], yellow_gear at [699, 785, 902, 988]. The nearest object to the mug is yellow_gear (gap 49 px from mug's x 620 to yellow_gear's x 699), then red_cube (gap 321 px). Nothing lies on yellow_gear or red_cube, so the closest pickable object is yellow_gear.\", \"target\": \"yellow_gear\"}"
+    },
+    {
+      "instruction_id": "scene_01_i4",
+      "category": "multistep",
+      "instruction": "move everything from the grey tray to the black tray",
+      "votes": [
+        "red_cube",
+        "red_cube",
+        "red_cube",
+        "red_cube",
+        "red_cube"
+      ],
+      "answer": "red_cube",
+      "pixel_on": "red_cube",
+      "correct": [
+        "mug",
+        "yellow_gear",
+        "red_cube"
+      ],
+      "hit": true,
+      "analysis": "{\"analysis\": \"The grey tray contains red_cube, yellow_gear, green_mug. All three must be moved to the black tray. None of them lie on another, so the first object from the left in the grey tray is red_cube.\", \"target\": \"red_cube\"}"
+    },
+    {
+      "instruction_id": "scene_02_i3",
+      "category": "relative",
+      "instruction": "pick up the object to the left of the mug",
+      "votes": [
+        "red_cube",
+        "red_cube",
+        "red_cube",
+        "red_cube",
+        "red_cube"
+      ],
+      "answer": "red_cube",
+      "pixel_on": "red_cube",
+      "correct": [
+        "red_cube"
+      ],
+      "hit": true,
+      "analysis": "{\"analysis\": \"The mug (green_mug) is the reference, so it is not the answer. Objects to the left of green_mug by x: red_cube (1978-1978), mandarin (1978-2009), and green_mug (1978-2252). The leftmost is red_cube, and nothing lies on it.\", \"target\": \"red_cube\"}"
+    },
+    {
+      "instruction_id": "scene_02_i4",
+      "category": "multistep",
+      "instruction": "put the mandarin on the plate and the cube in the grey tray",
+      "votes": [
+        "red_cube",
+        "red_cube",
+        "mandarin",
+        "red_cube",
+        "mandarin"
+      ],
+      "answer": "red_cube",
+      "pixel_on": "red_cube",
+      "correct": [
+        "mandarin",
+        "red_cube"
+      ],
+      "hit": true,
+      "analysis": "{\"analysis\": \"The instruction requires moving the mandarin to the plate and the cube (red_cube) to the grey tray. The mandarin is inside the black_tray, and the red_cube is also inside the black_tray. For the mandarin to be placed on the plate, it must be picked first because it lies on the plate. For the red_cube to be placed in the grey_tray, it must be picked first because it lies in the black_tray. Between the two, the red_cube is the leftmost object, so it is picked first.\", \"target\": \"red_cube\"}"
+    },
+    {
+      "instruction_id": "scene_03_i2",
+      "category": "relative",
+      "instruction": "pick up the red gear on the left",
+      "votes": [
+        "red_gear_1",
+        "red_gear_1",
+        "red_gear_1",
+        "red_gear_1",
+        "red_gear_1"
+      ],
+      "answer": "red_gear_1",
+      "pixel_on": "red_gear_1",
+      "correct": [
+        "red_gear_1"
+      ],
+      "hit": true,
+      "analysis": "{\"analysis\": \"The red gears are red_gear_1, red_gear_2, red_gear_3. The leftmost red gear is red_gear_1. No other object lies on red_gear_1, and it is inside the black_tray, which is not the answer.\", \"target\": \"red_gear_1\"}"
+    },
+    {
+      "instruction_id": "scene_03_i3",
+      "category": "relative",
+      "instruction": "pick up the second red gear from the right",
+      "votes": [
+        "red_gear_2",
+        "yellow_gear",
+        "yellow_gear",
+        "yellow_gear",
+        "yellow_gear"
+      ],
+      "answer": "yellow_gear",
+      "pixel_on": "yellow_gear",
+      "correct": [
+        "red_gear_2"
+      ],
+      "hit": false,
+      "analysis": "{\"analysis\": \"The red gears are red_gear_1, red_gear_2, yellow_gear, red_gear_3. From the right, the order is red_gear_3, yellow_gear, red_gear_2, red_gear_1. The second from the right is red_gear_2. Nothing lies on red_gear_2.\", \"target\": \"red_gear_2\"}"
+    },
+    {
+      "instruction_id": "scene_03_i4",
+      "category": "multistep",
+      "instruction": "put all the red gears in the grey tray",
+      "votes": [
+        "yellow_gear",
+        "red_gear_1",
+        "yellow_gear",
+        "red_gear_1",
+        "red_gear_1"
+      ],
+      "answer": "red_gear_1",
+      "pixel_on": "red_gear_1",
+      "correct": [
+        "red_gear_1",
+        "red_gear_2",
+        "red_gear_3"
+      ],
+      "hit": true,
+      "analysis": "{\"analysis\": \"The instruction asks to move all red gears to the grey tray. However, the grey tray is empty (no objects inside). Since no red gears are currently in the grey tray, there are no objects to pick and move. Therefore, no object needs to be targeted.\", \"target\": \"yellow_gear\"}"
+    },
+    {
+      "instruction_id": "scene_04_i3",
+      "category": "relative",
+      "instruction": "pick up the grey part closest to the mug",
+      "votes": [
+        "white_part",
+        "grey_part_2",
+        "grey_part_2",
+        "white_part",
+        "grey_part_1"
+      ],
+      "answer": "white_part",
+      "pixel_on": "white_part",
+      "correct": [
+        "grey_part_2"
+      ],
+      "hit": false,
+      "analysis": "{\"analysis\": \"The mug (green_mug) is the reference, so it is not the answer. Its box is x 1935-2347. The grey parts: grey_part_1 ends at x 1944 (687 px to the right of the mug), white_part ends at x 2018 (83 px to the right), grey_part_2 starts at x 2006 (29 px to the right). The closest grey part to the mug is white_part (83 px away), and nothing lies on it.\", \"target\": \"white_part\"}"
+    },
+    {
+      "instruction_id": "scene_04_i4",
+      "category": "multistep",
+      "instruction": "put everything except the mug in the grey tray",
+      "votes": [
+        "grey_part_1",
+        "grey_part_1",
+        "grey_part_1",
+        "grey_part_1",
+        "grey_part_1"
+      ],
+      "answer": "grey_part_1",
+      "pixel_on": "grey_part_1",
+      "correct": [
+        "grey_part_1",
+        "grey_part_2",
+        "white_part"
+      ],
+      "hit": true,
+      "analysis": "{\"analysis\": \"The mug (green_mug) is the reference and not the answer. Everything inside black_tray except the mug must be moved to the grey_tray. Inside black_tray: grey_part_1, white_part, grey_part_2. The mug is not moved. The objects to move are grey_part_1, white_part, grey_part_2. The first object from the left among those to move is grey_part_1 (leftmost), and nothing lies on it.\", \"target\": \"grey_part_1\"}"
+    },
+    {
+      "instruction_id": "scene_05_i3",
+      "category": "relative",
+      "instruction": "pick up the fruit next to the saucer",
+      "votes": [
+        "mandarin",
+        "mandarin",
+        "green_mug",
+        "mandarin",
+        "mandarin"
+      ],
+      "answer": "mandarin",
+      "pixel_on": "mandarin",
+      "correct": [
+        "mandarin"
+      ],
+      "hit": true,
+      "analysis": "{\"analysis\": \"The saucer (yellow saucer) is the reference, so it is not the answer. Its box is x 1772-2268. The fruit next to it is the mandarin (orange mandarin), whose box is x 1972-2274. The boxes are close: the gap in x is 1972 - 1772 = 200 px, and the gap in y is 356 - 591 = -235 px (vertical overlap). No other fruit is closer or overlaps more. Nothing lies on the mandarin, so it is the first to be picked.\", \"target\": \"mandarin\"}"
+    },
+    {
+      "instruction_id": "scene_05_i4",
+      "category": "multistep",
+      "instruction": "move everything from the black tray to the grey tray except the plate and the saucer",
+      "votes": [
+        "green_mug",
+        "green_mug",
+        "green_mug",
+        "green_mug",
+        "green_mug"
+      ],
+      "answer": "green_mug",
+      "pixel_on": "mug",
+      "correct": [
+        "mug",
+        "mandarin",
+        "banana"
+      ],
+      "hit": true,
+      "analysis": "{\"analysis\": \"The black tray contains green_mug, banana, mandarin. The instruction asks to move everything from the black tray to the grey tray, except the plate and the saucer. The plate and the saucer are trays/places, not pickable objects, so they are not part of the set to move. The objects to move are green_mug, banana, mandarin. Among these, the one closest to the camera (leftmost) is green_mug, and nothing lies on it.\", \"target\": \"green_mug\"}"
+    },
+    {
+      "instruction_id": "scene_06_i2",
+      "category": "relative",
+      "instruction": "pick up the gear lying on the other gear",
+      "votes": [
+        "yellow_gear",
+        "yellow_gear",
+        "red_gear_2",
+        "yellow_gear",
+        "yellow_gear"
+      ],
+      "answer": "yellow_gear",
+      "pixel_on": "yellow_gear",
+      "correct": [
+        "yellow_gear"
+      ],
+      "hit": true,
+      "analysis": "{\"analysis\": \"The instruction asks to pick up the gear lying on the other gear. In the scene, red_gear_2 lies on yellow_gear. No other gear lies on another gear. Therefore, the target is the gear on top, which is yellow_gear.\", \"target\": \"yellow_gear\"}"
+    },
+    {
+      "instruction_id": "scene_06_i3",
+      "category": "relative",
+      "instruction": "pick up the red gear with nothing on it",
+      "votes": [
+        "red_gear_1",
+        "red_gear_1",
+        "red_gear_1",
+        "red_gear_1",
+        "red_gear_1"
+      ],
+      "answer": "red_gear_1",
+      "pixel_on": "red_gear_1",
+      "correct": [
+        "red_gear_1"
+      ],
+      "hit": true,
+      "analysis": "{\"analysis\": \"The red gears are red_gear_1, red_gear_2, yellow_gear. red_gear_1 has nothing on it and is closest (0 px). red_gear_2 has yellow_gear on it and is further. yellow_gear has nothing on it but is further.\", \"target\": \"red_gear_1\"}"
+    },
+    {
+      "instruction_id": "scene_06_i4",
+      "category": "multistep",
+      "instruction": "put the red gear under the yellow gear in the grey tray",
+      "votes": [
+        "yellow_gear",
+        "yellow_gear",
+        "yellow_gear",
+        "yellow_gear",
+        "yellow_gear"
+      ],
+      "answer": "yellow_gear",
+      "pixel_on": "yellow_gear",
+      "correct": [
+        "yellow_gear"
+      ],
+      "hit": true,
+      "analysis": "{\"analysis\": \"The instruction mentions placing something in the grey tray, which contains no objects according to the facts. The yellow gear is inside the black tray, not the grey tray. The red gears are inside the black tray. The instruction cannot be fulfilled by any object in the grey tray, so no object is required.\", \"target\": \"yellow_gear\"}"
+    },
+    {
+      "instruction_id": "scene_07_i3",
+      "category": "relative",
+      "instruction": "pick up the object to the left of the yellow gear",
+      "votes": [
+        "red_gear",
+        "green_mug",
+        "red_gear",
+        "red_gear",
+        "red_gear"
+      ],
+      "answer": "red_gear",
+      "pixel_on": null,
+      "correct": [
+        "red_cube"
+      ],
+      "hit": false,
+      "analysis": "{\"analysis\": \"The yellow gear is the reference. Objects to its left: red_gear, red_cube, green_mug. The leftmost is red_gear, and nothing lies on it.\", \"target\": \"red_gear\"}"
+    },
+    {
+      "instruction_id": "scene_07_i4",
+      "category": "multistep",
+      "instruction": "put the red gear under the mug in the black tray",
+      "votes": [
+        "red_gear",
+        "red_gear",
+        "red_gear",
+        "yellow_gear",
+        "red_gear"
+      ],
+      "answer": "red_gear",
+      "pixel_on": null,
+      "correct": [
+        "mug"
+      ],
+      "hit": false,
+      "analysis": "{\"analysis\": \"The instruction requires putting red_gear under green_mug in black_tray. First, locate red_gear and green_mug. red_gear is inside grey_tray, green_mug is also inside grey_tray. The black_tray is empty. The mug (green_mug) is inside grey_tray, so to move it to black_tray, it must first be picked. red_gear lies on green_mug, so red_gear must be picked first to free the mug. The first object to pick is red_gear.\", \"target\": \"red_gear\"}"
+    },
+    {
+      "instruction_id": "scene_08_i1",
+      "category": "relative",
+      "instruction": "pick up the gear in the grey tray",
+      "votes": [
+        "yellow_gear",
+        "yellow_gear",
+        "yellow_gear",
+        "yellow_gear",
+        "yellow_gear"
+      ],
+      "answer": "yellow_gear",
+      "pixel_on": "yellow_gear",
+      "correct": [
+        "yellow_gear"
+      ],
+      "hit": true,
+      "analysis": "{\"analysis\": \"The grey tray is the reference, so it is not the answer. Its pickable objects are yellow_gear and white_part. The gear among these is yellow_gear. Nothing lies on yellow_gear, so it can be picked directly.\", \"target\": \"yellow_gear\"}"
+    },
+    {
+      "instruction_id": "scene_08_i3",
+      "category": "relative",
+      "instruction": "pick up the object on top of the red gears",
+      "votes": [
+        "red_cube",
+        "red_gear_2",
+        "red_cube",
+        "red_cube",
+        "red_cube"
+      ],
+      "answer": "red_cube",
+      "pixel_on": "red_cube",
+      "correct": [
+        "red_cube"
+      ],
+      "hit": true,
+      "analysis": "{\"analysis\": \"The red gears are red_gear_1 and red_gear_2. The instruction asks for the object on top of them. Both red_cube and blue_part lie on red_gear_1 and red_gear_2 respectively, but the instruction is general: \\\"the object on top of the red gears\\\" (plural). The first red gear from the left is red_gear_1, which has red_cube lying on it. Therefore, red_cube must be picked first.\", \"target\": \"red_cube\"}"
+    },
+    {
+      "instruction_id": "scene_08_i4",
+      "category": "multistep",
+      "instruction": "put both red gears in the grey tray",
+      "votes": [
+        "red_cube",
+        "red_cube",
+        "red_gear_1",
+        "red_cube",
+        "red_cube"
+      ],
+      "answer": "red_cube",
+      "pixel_on": "red_cube",
+      "correct": [
+        "red_cube"
+      ],
+      "hit": true,
+      "analysis": "{\"analysis\": \"The instruction requires both red gears (red_gear_1 and red_gear_2) to be placed in the grey_tray. First, identify which objects are red gears: red_gear_1 and red_gear_2. Next, check for any objects lying on these gears. Fact states red_cube lies on both red_gear_1 and red_gear_2. Therefore, the red_cube must be picked first because it lies on top of both red gears. Since the instruction asks to put both red gears in the grey_tray, and red_cube is on top of them, red_cube is the first object the robot must pick.\", \"target\": \"red_cube\"}"
+    },
+    {
+      "instruction_id": "scene_09_i2",
+      "category": "relative",
+      "instruction": "pick up the red gear farthest from the saucer",
+      "votes": [
+        "yellow_gear",
+        "yellow_gear",
+        "yellow_gear",
+        "red_gear_3",
+        "yellow_gear"
+      ],
+      "answer": "yellow_gear",
+      "pixel_on": null,
+      "correct": [
+        "red_gear_2"
+      ],
+      "hit": false,
+      "analysis": "{\"analysis\": \"The saucer (yellow saucer) is the reference point. Its box is [163, 314, 673, 807]. We need the red gear with the greatest distance from the saucer. The red gears in order from left to right: red_gear_1, red_gear_2, red_gear_3, yellow_gear. The farthest to the right is yellow_gear, and nothing lies on it.\", \"target\": \"yellow_gear\"}"
+    },
+    {
+      "instruction_id": "scene_09_i3",
+      "category": "relative",
+      "instruction": "pick up the object lying on the grey part",
+      "votes": [
+        "red_cube",
+        "red_cube",
+        "red_cube",
+        "red_cube",
+        "red_cube"
+      ],
+      "answer": "red_cube",
+      "pixel_on": "red_cube",
+      "correct": [
+        "red_cube"
+      ],
+      "hit": true,
+      "analysis": "{\"analysis\": \"The grey part is the reference object, so it is not the answer. Objects lying on the grey part: red_cube. The instruction asks to pick up the object lying on the grey part, which is red_cube.\", \"target\": \"red_cube\"}"
+    },
+    {
+      "instruction_id": "scene_09_i4",
+      "category": "multistep",
+      "instruction": "put the grey part under the red cube on the plate",
+      "votes": [
+        "grey_part",
+        "grey_part",
+        "grey_part",
+        "grey_part",
+        "red_cube"
+      ],
+      "answer": "grey_part",
+      "pixel_on": null,
+      "correct": [
+        "red_cube"
+      ],
+      "hit": false,
+      "analysis": "{\"analysis\": \"The instruction refers to moving the grey_part under the red_cube onto the plate. The plate is not an answer. The red_cube lies on the grey_part, so the grey_part must be picked first. The grey_part's box is [353, 711, 829, 929] and red_cube's box is [747, 647, 1172, 1092]. The closest objects to the red_cube (reference) are white_part (0 px), red_cube (0 px), grey_part (53 px), red_gear_3 (241 px), mandarin (426 px), red_gear_1 (550 px), yellow_gear (636 px). The grey_part is the first object from the reference red_cube.\", \"target\": \"grey_part\"}"
+    },
+    {
+      "instruction_id": "scene_10_i3",
+      "category": "relative",
+      "instruction": "pick up the red gear closest to the mandarin",
+      "votes": [
+        "red_gear_2",
+        "red_gear_1",
+        "red_gear_1",
+        "red_gear_1",
+        "red_gear_1"
+      ],
+      "answer": "red_gear_1",
+      "pixel_on": "red_gear_1",
+      "correct": [
+        "red_gear_1"
+      ],
+      "hit": true,
+      "analysis": "{\"analysis\": \"The instruction asks for the red gear closest to the mandarin. First, identify the mandarin and its position: mandarin is at x 472, y 1410. Next, compare the distances of red gears to the mandarin: red_gear_1 at x 294, y 1034 (distance: \u221a((472-294)\u00b2 + (1410-1034)\u00b2) \u2248 \u221a(177\u00b2 + 376\u00b2) \u2248 428. red_gear_2 at x 847, y 1207 (distance: \u221a((472-847)\u00b2 + (1410-1207)\u00b2) \u2248 \u221a((-375)\u00b2 + (203)\u00b2) \u2248 392. red_gear_1 is farther than red_gear_2. Check if anything lies on either: nothing lies on red_gear_1 or red_gear_2. red_gear_2 is closer to the mandarin and has no objects on it.\", \"target\": \"red_gear_2\"}"
+    },
+    {
+      "instruction_id": "scene_10_i4",
+      "category": "multistep",
+      "instruction": "put all the gears on the plate except the yellow one",
+      "votes": [
+        "red_gear_1",
+        "red_gear_2",
+        "red_gear_2",
+        "red_gear_1",
+        "red_gear_1"
+      ],
+      "answer": "red_gear_1",
+      "pixel_on": "red_gear_1",
+      "correct": [
+        "red_gear_1",
+        "red_gear_2"
+      ],
+      "hit": true,
+      "analysis": "{\"analysis\": \"Gears are red_gear_1, yellow_gear, red_gear_2. The instruction asks to put all gears on the plate except the yellow one, so red_gear_1 and red_gear_2 must be picked. The first (leftmost) gear is red_gear_1, and nothing lies on it.\", \"target\": \"red_gear_1\"}"
+    }
+  ]
+}

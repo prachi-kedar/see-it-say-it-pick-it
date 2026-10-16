@@ -1,0 +1,123 @@
+{
+  "scene": "scene_03",
+  "image_size": [
+    2448,
+    2048
+  ],
+  "objects": [
+    {
+      "id": "black_tray",
+      "noun": "tray",
+      "colour": "black",
+      "pixel": [
+        1845,
+        959
+      ],
+      "box": [
+        1244,
+        1,
+        2446,
+        1918
+      ],
+      "score": 0.253,
+      "name_confidence": 1.0,
+      "inside": null,
+      "on_top_of": null
+    },
+    {
+      "id": "grey_tray",
+      "noun": "tray",
+      "colour": "grey",
+      "pixel": [
+        644,
+        959
+      ],
+      "box": [
+        0,
+        82,
+        1288,
+        1836
+      ],
+      "score": 0.732,
+      "name_confidence": 0.673,
+      "inside": null,
+      "on_top_of": null
+    },
+    {
+      "id": "red_gear_1",
+      "noun": "gear",
+      "colour": "red",
+      "pixel": [
+        1580,
+        702
+      ],
+      "box": [
+        1344,
+        596,
+        1707,
+        952
+      ],
+      "score": 0.537,
+      "name_confidence": 0.989,
+      "inside": "black_tray",
+      "on_top_of": null
+    },
+    {
+      "id": "red_gear_2",
+      "noun": "gear",
+      "colour": "red",
+      "pixel": [
+        1865,
+        742
+      ],
+      "box": [
+        1711,
+        604,
+        2073,
+        960
+      ],
+      "score": 0.529,
+      "name_confidence": 0.995,
+      "inside": "black_tray",
+      "on_top_of": null
+    },
+    {
+      "id": "red_gear_3",
+      "noun": "gear",
+      "colour": "red",
+      "pixel": [
+        2245,
+        721
+      ],
+      "box": [
+        2076,
+        610,
+        2436,
+        970
+      ],
+      "score": 0.508,
+      "name_confidence": 0.998,
+      "inside": "black_tray",
+      "on_top_of": null
+    },
+    {
+      "id": "yellow_gear",
+      "noun": "gear",
+      "colour": "yellow",
+      "pixel": [
+        1896,
+        1099
+      ],
+      "box": [
+        1765,
+        1003,
+        1967,
+        1195
+      ],
+      "score": 0.439,
+      "name_confidence": 0.732,
+      "inside": "black_tray",
+      "on_top_of": null
+    }
+  ]
+}

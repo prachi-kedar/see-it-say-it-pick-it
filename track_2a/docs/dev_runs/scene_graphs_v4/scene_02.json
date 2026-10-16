@@ -1,0 +1,142 @@
+{
+  "scene": "scene_02",
+  "image_size": [
+    2448,
+    2048
+  ],
+  "objects": [
+    {
+      "id": "black_part",
+      "noun": "part",
+      "colour": "black",
+      "pixel": [
+        1785,
+        1332
+      ],
+      "box": [
+        1698,
+        1230,
+        1872,
+        1434
+      ],
+      "score": 0.327,
+      "name_confidence": 0.481,
+      "inside": "plate",
+      "on_top_of": null
+    },
+    {
+      "id": "black_tray",
+      "noun": "tray",
+      "colour": "black",
+      "pixel": [
+        1840,
+        850
+      ],
+      "box": [
+        1233,
+        0,
+        2448,
+        1701
+      ],
+      "score": 0.0,
+      "name_confidence": 0.0,
+      "inside": null,
+      "on_top_of": null
+    },
+    {
+      "id": "green_mug",
+      "noun": "mug",
+      "colour": "green",
+      "pixel": [
+        2252,
+        356
+      ],
+      "box": [
+        1978,
+        165,
+        2440,
+        586
+      ],
+      "score": 0.786,
+      "name_confidence": 0.901,
+      "inside": "black_tray",
+      "on_top_of": null
+    },
+    {
+      "id": "grey_tray",
+      "noun": "tray",
+      "colour": "grey",
+      "pixel": [
+        645,
+        960
+      ],
+      "box": [
+        0,
+        81,
+        1290,
+        1839
+      ],
+      "score": 0.598,
+      "name_confidence": 0.735,
+      "inside": null,
+      "on_top_of": null
+    },
+    {
+      "id": "mandarin",
+      "noun": "mandarin",
+      "colour": "orange",
+      "pixel": [
+        2164,
+        925
+      ],
+      "box": [
+        2009,
+        771,
+        2314,
+        1074
+      ],
+      "score": 0.738,
+      "name_confidence": 0.994,
+      "inside": "black_tray",
+      "on_top_of": null
+    },
+    {
+      "id": "plate",
+      "noun": "plate",
+      "colour": "grey",
+      "pixel": [
+        1767,
+        1320
+      ],
+      "box": [
+        1385,
+        936,
+        2150,
+        1705
+      ],
+      "score": 0.866,
+      "name_confidence": 0.998,
+      "inside": null,
+      "on_top_of": null
+    },
+    {
+      "id": "red_cube",
+      "noun": "cube",
+      "colour": "red",
+      "pixel": [
+        1599,
+        435
+      ],
+      "box": [
+        1475,
+        243,
+        1888,
+        672
+      ],
+      "score": 0.448,
+      "name_confidence": 0.929,
+      "inside": "black_tray",
+      "on_top_of": null
+    }
+  ]
+}

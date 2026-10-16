@@ -86,7 +86,7 @@ def rescale(ans: dict, scale: float) -> dict:
 
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("--data", type=Path, default=Path("dataset"))
+    ap.add_argument("--data", type=Path, default=Path("data/dataset"))
     ap.add_argument("--out", type=Path, default=Path("results.json"))
     ap.add_argument("--base-url", default="http://localhost:8000/v1")
     ap.add_argument("--model", default="swiss-ai/Apertus-v1.5-8B")

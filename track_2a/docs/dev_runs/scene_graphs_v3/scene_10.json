@@ -1,0 +1,199 @@
+{
+  "scene": "scene_10",
+  "image_size": [
+    2448,
+    2048
+  ],
+  "objects": [
+    {
+      "id": "black_tray",
+      "noun": "tray",
+      "colour": "black",
+      "pixel": [
+        1766,
+        958
+      ],
+      "box": [
+        1085,
+        0,
+        2448,
+        1916
+      ],
+      "score": 0.0,
+      "name_confidence": 0.0,
+      "inside": null,
+      "on_top_of": []
+    },
+    {
+      "id": "green_mug",
+      "noun": "mug",
+      "colour": "green",
+      "pixel": [
+        811,
+        692
+      ],
+      "box": [
+        529,
+        535,
+        1019,
+        928
+      ],
+      "score": 0.674,
+      "name_confidence": 0.825,
+      "inside": "grey_tray",
+      "on_top_of": []
+    },
+    {
+      "id": "grey_tray",
+      "noun": "tray",
+      "colour": "grey",
+      "pixel": [
+        642,
+        957
+      ],
+      "box": [
+        0,
+        81,
+        1284,
+        1833
+      ],
+      "score": 0.694,
+      "name_confidence": 0.977,
+      "inside": null,
+      "on_top_of": []
+    },
+    {
+      "id": "hand",
+      "noun": "hand",
+      "colour": "orange",
+      "pixel": [
+        1172,
+        219
+      ],
+      "box": [
+        999,
+        71,
+        1239,
+        403
+      ],
+      "score": 0.323,
+      "name_confidence": 0.666,
+      "inside": "grey_tray",
+      "on_top_of": []
+    },
+    {
+      "id": "mandarin",
+      "noun": "mandarin",
+      "colour": "orange",
+      "pixel": [
+        472,
+        1410
+      ],
+      "box": [
+        315,
+        1255,
+        623,
+        1562
+      ],
+      "score": 0.761,
+      "name_confidence": 0.998,
+      "inside": "grey_tray",
+      "on_top_of": []
+    },
+    {
+      "id": "plate",
+      "noun": "plate",
+      "colour": "grey",
+      "pixel": [
+        1870,
+        1301
+      ],
+      "box": [
+        1488,
+        919,
+        2253,
+        1684
+      ],
+      "score": 0.874,
+      "name_confidence": 0.02,
+      "inside": null,
+      "on_top_of": []
+    },
+    {
+      "id": "red_gear_1",
+      "noun": "gear",
+      "colour": "red",
+      "pixel": [
+        294,
+        1034
+      ],
+      "box": [
+        148,
+        851,
+        523,
+        1217
+      ],
+      "score": 0.474,
+      "name_confidence": 0.996,
+      "inside": "grey_tray",
+      "on_top_of": []
+    },
+    {
+      "id": "red_gear_2",
+      "noun": "gear",
+      "colour": "red",
+      "pixel": [
+        847,
+        1207
+      ],
+      "box": [
+        601,
+        981,
+        979,
+        1352
+      ],
+      "score": 0.451,
+      "name_confidence": 1.0,
+      "inside": "grey_tray",
+      "on_top_of": []
+    },
+    {
+      "id": "saucer",
+      "noun": "saucer",
+      "colour": "yellow",
+      "pixel": [
+        418,
+        563
+      ],
+      "box": [
+        165,
+        316,
+        671,
+        810
+      ],
+      "score": 0.748,
+      "name_confidence": 0.23,
+      "inside": null,
+      "on_top_of": []
+    },
+    {
+      "id": "yellow_gear",
+      "noun": "gear",
+      "colour": "yellow",
+      "pixel": [
+        833,
+        1470
+      ],
+      "box": [
+        728,
+        1379,
+        938,
+        1576
+      ],
+      "score": 0.329,
+      "name_confidence": 0.581,
+      "inside": "grey_tray",
+      "on_top_of": []
+    }
+  ]
+}

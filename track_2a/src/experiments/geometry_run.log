@@ -1,0 +1,154 @@
+plain                scene_01_i3  MISS red_cube 
+plain                scene_01_i4  ok   green_mug 
+plain                scene_02_i3  ok   red_cube 
+plain                scene_02_i4  ok   mandarin 
+plain                scene_03_i2  ok   red_gear_1 
+plain                scene_03_i3  ok   red_gear_2 
+plain                scene_03_i4  ok   red_gear_1 
+plain                scene_04_i3  MISS grey_part_1 
+plain                scene_04_i4  ok   grey_part_1 
+plain                scene_05_i3  MISS banana 
+plain                scene_05_i4  ok   banana 
+plain                scene_06_i2  ok   yellow_gear 
+plain                scene_06_i3  ok   red_gear_1 
+plain                scene_06_i4  MISS red_gear_2 
+plain                scene_07_i3  ok   red_cube 
+plain                scene_07_i4  MISS red_gear 
+plain                scene_08_i1  MISS white_part 
+plain                scene_08_i3  ok   red_cube 
+plain                scene_08_i4  MISS red_gear_1 
+plain                scene_09_i2  ok   red_gear_1 
+plain                scene_09_i3  ok   red_cube 
+plain                scene_09_i4  MISS grey_part 
+plain                scene_10_i3  ok   red_gear_1 
+plain                scene_10_i4  ok   red_gear_1 
+examples             scene_01_i3  ok   yellow_gear 
+examples             scene_01_i4  ok   red_cube 
+examples             scene_02_i3  MISS green_mug 
+examples             scene_02_i4  ok   mandarin 
+examples             scene_03_i2  ok   red_gear_1 
+examples             scene_03_i3  ok   red_gear_2 
+examples             scene_03_i4  MISS yellow_gear 
+examples             scene_04_i3  ok   grey_part_2 
+examples             scene_04_i4  ok   grey_part_1 
+examples             scene_05_i3  ok   mandarin 
+examples             scene_05_i4  ok   banana 
+examples             scene_06_i2  ok   yellow_gear 
+examples             scene_06_i3  ok   red_gear_1 
+examples             scene_06_i4  MISS red_gear_2 
+examples             scene_07_i3  MISS red_gear 
+examples             scene_07_i4  MISS red_gear 
+examples             scene_08_i1  ok   yellow_gear 
+examples             scene_08_i3  MISS red_gear_1 
+examples             scene_08_i4  MISS red_gear_1 
+examples             scene_09_i2  ok   red_gear_1 
+examples             scene_09_i3  ok   red_cube 
+examples             scene_09_i4  MISS grey_part 
+examples             scene_10_i3  ok   red_gear_1 
+examples             scene_10_i4  ok   red_gear_1 
+vote                 scene_01_i3  MISS red_cube ['red_cube', 'red_cube', 'red_cube', 'yellow_gear', 'red_cube']
+vote                 scene_01_i4  ok   green_mug ['green_mug', 'green_mug', 'green_mug', 'green_mug', 'green_mug']
+vote                 scene_02_i3  ok   red_cube ['red_cube', 'red_cube', 'red_cube', 'red_cube', 'red_cube']
+vote                 scene_02_i4  ok   mandarin ['mandarin', 'mandarin', 'mandarin', 'mandarin', 'mandarin']
+vote                 scene_03_i2  ok   red_gear_1 ['red_gear_1', 'red_gear_1', 'red_gear_1', 'red_gear_1', 'red_gear_1']
+vote                 scene_03_i3  ok   red_gear_2 ['red_gear_2', 'red_gear_2', 'red_gear_2', 'red_gear_2', 'red_gear_2']
+vote                 scene_03_i4  ok   red_gear_1 ['red_gear_1', 'red_gear_1', 'red_gear_1', 'red_gear_1', 'red_gear_1']
+vote                 scene_04_i3  MISS grey_part_1 ['grey_part_1', 'grey_part_1', 'grey_part_2', 'grey_part_1', 'grey_part_1']
+vote                 scene_04_i4  ok   grey_part_1 ['grey_part_1', 'white_part', 'grey_part_1', 'white_part', 'grey_part_1']
+vote                 scene_05_i3  MISS banana ['banana', 'banana', 'banana', 'banana', 'banana']
+vote                 scene_05_i4  ok   banana ['banana', 'banana', 'banana', 'banana', 'banana']
+vote                 scene_06_i2  ok   yellow_gear ['red_gear_2', 'yellow_gear', 'yellow_gear', 'yellow_gear', 'yellow_gear']
+vote                 scene_06_i3  ok   red_gear_1 ['red_cube', 'red_gear_1', 'red_gear_1', 'red_gear_1', 'red_gear_1']
+vote                 scene_06_i4  MISS red_gear_2 ['red_gear_2', 'red_gear_2', 'red_gear_2', 'red_gear_2', 'red_gear_2']
+vote                 scene_07_i3  MISS red_gear ['red_gear', 'red_cube', 'red_cube', 'red_gear', 'red_gear']
+vote                 scene_07_i4  MISS red_gear ['red_gear', 'red_gear', 'red_gear', 'red_gear', 'red_gear']
+vote                 scene_08_i1  MISS white_part ['white_part', 'white_part', 'yellow_gear', 'white_part', None]
+vote                 scene_08_i3  ok   red_cube ['red_cube', 'red_cube', 'red_cube', 'red_cube', 'red_cube']
+vote                 scene_08_i4  MISS red_gear_1 ['red_gear_1', 'red_gear_1', 'red_gear_1', 'red_gear_1', 'red_gear_1']
+vote                 scene_09_i2  ok   red_gear_1 ['red_gear_1', 'red_gear_3', 'red_gear_1', 'red_gear_1', 'red_gear_3']
+vote                 scene_09_i3  MISS mandarin [None, 'mandarin', 'red_cube', 'mandarin', 'red_cube']
+vote                 scene_09_i4  MISS grey_part ['grey_part', 'grey_part', 'grey_part', 'grey_part', 'grey_part']
+vote                 scene_10_i3  MISS red_gear_2 ['red_gear_2', 'red_gear_2', 'red_gear_2', 'red_gear_1', 'red_gear_2']
+vote                 scene_10_i4  ok   red_gear_1 ['red_gear_1', 'red_gear_1', 'yellow_gear', 'red_gear_1', 'yellow_gear']
+examples+vote        scene_01_i3  ok   yellow_gear ['yellow_gear', 'yellow_gear', 'yellow_gear', 'red_cube', 'yellow_gear']
+examples+vote        scene_01_i4  ok   red_cube ['green_mug', 'red_cube', 'red_cube', 'red_cube', 'red_cube']
+examples+vote        scene_02_i3  MISS green_mug ['red_cube', 'green_mug', 'green_mug', 'green_mug', 'green_mug']
+examples+vote        scene_02_i4  ok   mandarin ['mandarin', 'red_cube', 'mandarin', 'red_cube', 'mandarin']
+examples+vote        scene_03_i2  ok   red_gear_1 ['red_gear_1', 'red_gear_1', 'red_gear_1', 'red_gear_1', 'red_gear_1']
+examples+vote        scene_03_i3  ok   red_gear_2 ['red_gear_2', 'red_gear_2', 'red_gear_2', 'red_gear_2', 'red_gear_2']
+examples+vote        scene_03_i4  ok   red_gear_1 ['red_gear_1', 'red_gear_1', 'red_gear_1', 'red_gear_1', 'red_gear_1']
+examples+vote        scene_04_i3  ok   grey_part_2 ['grey_part_2', 'grey_part_2', 'grey_part_1', 'grey_part_1', 'grey_part_2']
+examples+vote        scene_04_i4  ok   grey_part_1 ['grey_part_1', None, 'grey_part_1', 'grey_part_1', 'grey_part_1']
+examples+vote        scene_05_i3  ok   mandarin ['banana', 'mandarin', 'mandarin', 'mandarin', 'mandarin']
+examples+vote        scene_05_i4  ok   banana ['green_mug', 'banana', 'banana', 'banana', 'banana']
+examples+vote        scene_06_i2  ok   yellow_gear ['yellow_gear', 'yellow_gear', 'yellow_gear', 'yellow_gear', 'yellow_gear']
+examples+vote        scene_06_i3  ok   red_gear_1 ['red_gear_1', 'red_gear_1', 'red_gear_1', 'red_gear_1', 'red_gear_1']
+examples+vote        scene_06_i4  MISS red_gear_2 ['red_gear_2', 'red_gear_2', 'red_gear_2', 'red_gear_2', 'red_gear_2']
+examples+vote        scene_07_i3  MISS red_gear ['red_gear', 'red_gear', 'red_gear', 'red_gear', 'red_gear']
+examples+vote        scene_07_i4  MISS red_gear ['red_gear', 'red_gear', 'red_gear', 'red_gear', 'red_gear']
+examples+vote        scene_08_i1  ok   yellow_gear ['yellow_gear', 'yellow_gear', 'yellow_gear', 'yellow_gear', 'white_part']
+examples+vote        scene_08_i3  MISS red_gear_1 ['red_gear_1', 'red_gear_1', 'red_gear_2', 'red_gear_1', 'red_gear_2']
+examples+vote        scene_08_i4  MISS red_gear_1 ['red_gear_1', 'red_gear_1', 'red_gear_1', 'red_gear_1', 'red_gear_1']
+examples+vote        scene_09_i2  MISS red_gear_3 ['red_gear_3', 'red_gear_3', 'red_cube', 'grey_part', 'red_gear_3']
+examples+vote        scene_09_i3  ok   red_cube ['red_cube', 'red_cube', 'red_cube', 'red_cube', 'red_cube']
+examples+vote        scene_09_i4  MISS grey_part ['grey_part', 'grey_part', 'grey_part', 'grey_part', 'grey_part']
+examples+vote        scene_10_i3  ok   red_gear_1 ['red_gear_1', 'red_gear_1', 'red_gear_1', 'red_gear_1', 'red_gear_1']
+examples+vote        scene_10_i4  ok   red_gear_1 ['red_gear_1', 'red_gear_1', 'red_gear_1', 'red_gear_1', 'red_gear_1']
+facts                scene_01_i3  ok   yellow_gear 
+facts                scene_01_i4  ok   red_cube 
+facts                scene_02_i3  ok   red_cube 
+facts                scene_02_i4  ok   mandarin 
+facts                scene_03_i2  ok   red_gear_1 
+facts                scene_03_i3  ok   red_gear_2 
+facts                scene_03_i4  ok   red_gear_1 
+facts                scene_04_i3  ok   grey_part_2 
+facts                scene_04_i4  ok   grey_part_1 
+facts                scene_05_i3  ok   mandarin 
+facts                scene_05_i4  ok   green_mug 
+facts                scene_06_i2  MISS red_gear_2 
+facts                scene_06_i3  ok   red_gear_1 
+facts                scene_06_i4  MISS red_gear_2 
+facts                scene_07_i3  MISS green_mug 
+facts                scene_07_i4  MISS red_gear 
+facts                scene_08_i1  ok   yellow_gear 
+facts                scene_08_i3  ok   red_cube 
+facts                scene_08_i4  MISS red_gear_1 
+facts                scene_09_i2  MISS yellow_gear 
+facts                scene_09_i3  ok   red_cube 
+facts                scene_09_i4  MISS grey_part 
+facts                scene_10_i3  ok   red_gear_1 
+facts                scene_10_i4  ok   red_gear_1 
+facts+examples+vote  scene_01_i3  ok   yellow_gear ['yellow_gear', 'green_mug', 'yellow_gear', 'yellow_gear', 'yellow_gear']
+facts+examples+vote  scene_01_i4  ok   red_cube ['red_cube', 'red_cube', 'red_cube', 'red_cube', 'red_cube']
+facts+examples+vote  scene_02_i3  ok   red_cube ['red_cube', 'red_cube', 'red_cube', 'red_cube', 'red_cube']
+facts+examples+vote  scene_02_i4  ok   red_cube ['red_cube', 'red_cube', 'mandarin', 'red_cube', 'mandarin']
+facts+examples+vote  scene_03_i2  ok   red_gear_1 ['red_gear_1', 'red_gear_1', 'red_gear_1', 'red_gear_1', 'red_gear_1']
+facts+examples+vote  scene_03_i3  MISS yellow_gear ['red_gear_2', 'yellow_gear', 'yellow_gear', 'yellow_gear', 'yellow_gear']
+facts+examples+vote  scene_03_i4  ok   red_gear_1 ['yellow_gear', 'red_gear_1', 'yellow_gear', 'red_gear_1', 'red_gear_1']
+facts+examples+vote  scene_04_i3  MISS white_part ['white_part', 'grey_part_2', 'grey_part_2', 'white_part', 'grey_part_1']
+facts+examples+vote  scene_04_i4  ok   grey_part_1 ['grey_part_1', 'grey_part_1', 'grey_part_1', 'grey_part_1', 'grey_part_1']
+facts+examples+vote  scene_05_i3  ok   mandarin ['mandarin', 'mandarin', 'green_mug', 'mandarin', 'mandarin']
+facts+examples+vote  scene_05_i4  ok   green_mug ['green_mug', 'green_mug', 'green_mug', 'green_mug', 'green_mug']
+facts+examples+vote  scene_06_i2  ok   yellow_gear ['yellow_gear', 'yellow_gear', 'red_gear_2', 'yellow_gear', 'yellow_gear']
+facts+examples+vote  scene_06_i3  ok   red_gear_1 ['red_gear_1', 'red_gear_1', 'red_gear_1', 'red_gear_1', 'red_gear_1']
+facts+examples+vote  scene_06_i4  ok   yellow_gear ['yellow_gear', 'yellow_gear', 'yellow_gear', 'yellow_gear', 'yellow_gear']
+facts+examples+vote  scene_07_i3  MISS red_gear ['red_gear', 'green_mug', 'red_gear', 'red_gear', 'red_gear']
+facts+examples+vote  scene_07_i4  MISS red_gear ['red_gear', 'red_gear', 'red_gear', 'yellow_gear', 'red_gear']
+facts+examples+vote  scene_08_i1  ok   yellow_gear ['yellow_gear', 'yellow_gear', 'yellow_gear', 'yellow_gear', 'yellow_gear']
+facts+examples+vote  scene_08_i3  ok   red_cube ['red_cube', 'red_gear_2', 'red_cube', 'red_cube', 'red_cube']
+facts+examples+vote  scene_08_i4  ok   red_cube ['red_cube', 'red_cube', 'red_gear_1', 'red_cube', 'red_cube']
+facts+examples+vote  scene_09_i2  MISS yellow_gear ['yellow_gear', 'yellow_gear', 'yellow_gear', 'red_gear_3', 'yellow_gear']
+facts+examples+vote  scene_09_i3  ok   red_cube ['red_cube', 'red_cube', 'red_cube', 'red_cube', 'red_cube']
+facts+examples+vote  scene_09_i4  MISS grey_part ['grey_part', 'grey_part', 'grey_part', 'grey_part', 'red_cube']
+facts+examples+vote  scene_10_i3  ok   red_gear_1 ['red_gear_2', 'red_gear_1', 'red_gear_1', 'red_gear_1', 'red_gear_1']
+facts+examples+vote  scene_10_i4  ok   red_gear_1 ['red_gear_1', 'red_gear_2', 'red_gear_2', 'red_gear_1', 'red_gear_1']
+
+variant               relative  multistep      all
+plain                    10/14       6/10    16/24
+examples                 11/14       5/10    16/24
+vote                      7/14       6/10    13/24
+examples+vote            10/14       6/10    16/24
+facts                    11/14       6/10    17/24
+facts+examples+vote      10/14       8/10    18/24
+
+every answer: /home/prachi/personal/see-it-say-it-pick-it/experiments/geometry_results.json
